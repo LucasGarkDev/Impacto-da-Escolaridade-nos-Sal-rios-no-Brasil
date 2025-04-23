@@ -15,3 +15,8 @@ mapeamento.py
 
 # Se quiser manter apenas arquivos essenciais, comente os que quer rastrear
 # !README.md  <- Descomente se quiser manter esse arquivo no Git
+
+# Ignorar arquivos grandes específicos
+amostra_temp.txt
+raw/PNADC_2023_visita1_20241220.zip
+raw/PNADC_2023_visita1_20241220/PNADC_2023_visita1.txt
