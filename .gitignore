@@ -1,4 +1,17 @@
-# Ignore the raw directory
+# Ignorar diretórios
 raw/*
-.venv/*
-venv/*
+.venv/
+venv/
+
+# Ignorar arquivos CSV e TXT soltos na raiz
+*.csv
+*.txt
+
+# Ignorar arquivos de notebooks (Jupyter) se forem grandes
+*.ipynb
+
+# Ignorar arquivos de mapeamento ou intermediários
+mapeamento.py
+
+# Se quiser manter apenas arquivos essenciais, comente os que quer rastrear
+# !README.md  <- Descomente se quiser manter esse arquivo no Git
