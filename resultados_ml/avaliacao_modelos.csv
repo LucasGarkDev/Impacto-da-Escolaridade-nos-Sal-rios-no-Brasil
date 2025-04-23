@@ -1,0 +1,7 @@
+Modelo,R²,RMSE
+Linear Regression,0.1308,4.0979
+Random Forest,0.2806,3.7281
+Gradient Boosting,0.3458,3.5551
+XGBoost,0.3728,3.481
+LightGBM,0.3933,3.4236
+CatBoost,0.3965,3.4146

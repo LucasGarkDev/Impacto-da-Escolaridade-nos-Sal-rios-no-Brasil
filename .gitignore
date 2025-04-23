@@ -1,0 +1,4 @@
+# Ignore the raw directory
+raw/*
+.venv/*
+venv/*
