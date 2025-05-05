@@ -34,10 +34,10 @@ import json
 # 0. 📥 Formatação inicial dos dados brutos da PNAD
 # ------------------------------
 def formatar_dados_pnad_ajustado(
-    caminho_dicionario="campos_dicionario.txt",
+    caminho_dicionario="data/campos_dicionario.txt",
     caminho_microdados="raw/PNADC_2023_visita1_20241220/PNADC_2023_visita1.txt",
     n_amostras=100000,
-    salvar_em="PNAD_2023_formatado.csv"
+    salvar_em="data/PNAD_2023_formatado.csv"
 ):
     # Leitura do dicionário
     try:
@@ -117,7 +117,7 @@ def formatar_dados_pnad_ajustado(
 # 🔍 Análise Exploratória
 # ------------------------------
 
-def analise_exploratoria(df, rais_path='consulta_rais.csv', salvar_em='insumo_dashboard'):
+def analise_exploratoria(df, rais_path='data/consulta_rais.csv', salvar_em='insumo_dashboard'):
     os.makedirs(salvar_em, exist_ok=True)
 
     # ------------------------------
@@ -188,8 +188,8 @@ def analise_exploratoria(df, rais_path='consulta_rais.csv', salvar_em='insumo_da
     # ------------------------------
     # 7. Tabelas para dashboard
     # ------------------------------
-    df.to_csv(os.path.join(salvar_em, 'dados_limpos_exploracao.csv'), index=False, encoding='utf-8-sig')
-    df_renda_valida.to_csv(os.path.join(salvar_em, 'dados_renda_valida.csv'), index=False, encoding='utf-8-sig')
+    df.to_csv(os.path.join(salvar_em, 'data/dados_limpos_exploracao.csv'), index=False, encoding='utf-8-sig')
+    df_renda_valida.to_csv(os.path.join(salvar_em, 'data/dados_renda_valida.csv'), index=False, encoding='utf-8-sig')
 
     return df, df_renda_valida
 
