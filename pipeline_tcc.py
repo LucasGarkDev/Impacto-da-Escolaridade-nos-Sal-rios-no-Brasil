@@ -92,13 +92,16 @@ def formatar_dados_pnad_ajustado(
         'Sexo (1 - Masculino, 2 - Feminino)': 'Sexo',
         'Cor ou raça': 'Cor_Raca',
         'Idade do morador na data de referência': 'Idade',
-        'Nível de instrução mais elevado que frequentava': 'Escolaridade_Num',
+        'Curso mais elevado frequentado anteriormente': 'Escolaridade_Num',
         'Rendimento mensal habitualmente recebido de todos os trabalhos': 'Renda_Habitual',
     }, inplace=True)
 
-    # Mapeamentos
+   # Mapeamentos
     df['Sexo'] = df['Sexo'].map({1: 'Masculino', 2: 'Feminino'})
     df['Cor_Raca'] = df['Cor_Raca'].map({1: 'Branca', 2: 'Preta', 3: 'Amarela', 4: 'Parda', 5: 'Indígena'})
+
+    # Corrigir tipos para o merge com RAIS
+    df['sexo'] = df['Sexo'].map({'Masculino': 1, 'Feminino': 2})  # <-- aqui!
 
     # Cálculo de renda total
     colunas_renda = [col for col in df.columns if 'reais' in col.lower()]
@@ -108,6 +111,22 @@ def formatar_dados_pnad_ajustado(
     # Calcular log_renda
     df = df[df['Renda_Total'] > 0].copy()
     df['log_renda'] = df['Renda_Total'].apply(lambda x: np.log1p(x))
+
+    # Criar colunas auxiliares para merge com a RAIS
+    map_uf = {
+        11: 'RO', 12: 'AC', 13: 'AM', 14: 'RR', 15: 'PA', 16: 'AP', 17: 'TO',
+        21: 'MA', 22: 'PI', 23: 'CE', 24: 'RN', 25: 'PB', 26: 'PE', 27: 'AL',
+        28: 'SE', 29: 'BA', 31: 'MG', 32: 'ES', 33: 'RJ', 35: 'SP',
+        41: 'PR', 42: 'SC', 43: 'RS', 50: 'MS', 51: 'MT', 52: 'GO', 53: 'DF'
+    }
+    df['sigla_uf'] = df['UF'].map(map_uf)
+    df['grau_instrucao'] = df['Escolaridade_Num']
+    df['faixa_etaria'] = pd.cut(
+        df['Idade'],
+        bins=[0, 17, 25, 35, 45, 55, 65, 80, 150],
+        labels=['0–17', '18–25', '26–35', '36–45', '46–55', '56–65', '66–80', '81+'],
+        right=False
+    )
 
     # Salvar resultado final
     df.to_csv(salvar_em, index=False, encoding="utf-8-sig")
@@ -147,7 +166,7 @@ def analise_exploratoria(df, rais_path='data/consulta_rais.csv', salvar_em='insu
         10: "Mestrado incompleto", 11: "Mestrado completo", 12: "Doutorado incompleto", 13: "Doutorado completo",
         14: "Alfabetização adultos", 15: "Educação infantil"
     }
-    df['Escolaridade_Label'] = df['Curso mais elevado frequentado anteriormente'].map(map_escolaridade)
+    df['Escolaridade_Label'] = df['grau_instrucao'].map(map_escolaridade)
 
     # ------------------------------
     # 3. Estatísticas e gráficos principais
@@ -188,8 +207,8 @@ def analise_exploratoria(df, rais_path='data/consulta_rais.csv', salvar_em='insu
     # ------------------------------
     # 7. Tabelas para dashboard
     # ------------------------------
-    df.to_csv(os.path.join(salvar_em, 'data/dados_limpos_exploracao.csv'), index=False, encoding='utf-8-sig')
-    df_renda_valida.to_csv(os.path.join(salvar_em, 'data/dados_renda_valida.csv'), index=False, encoding='utf-8-sig')
+    df.to_csv(os.path.join(salvar_em, 'dados_limpos_exploracao.csv'), index=False, encoding='utf-8-sig')
+    df_renda_valida.to_csv(os.path.join(salvar_em, 'dados_renda_valida.csv'), index=False, encoding='utf-8-sig')
 
     return df, df_renda_valida
 
@@ -234,7 +253,7 @@ def treinar_modelos(df, salvar_em='resultados_ml'):
         y_pred = modelo.predict(X_test)
 
         r2 = r2_score(y_test, y_pred)
-        rmse = mean_squared_error(y_test, y_pred, squared=False)
+        rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
         resultados[nome] = {
             "R2": r2,
