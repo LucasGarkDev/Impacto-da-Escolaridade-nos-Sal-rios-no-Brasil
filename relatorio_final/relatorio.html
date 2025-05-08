@@ -3,19 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Relatório de Análise</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        h1, h2 { color: #2c3e50; }
-        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>📊 Relatório de Modelagem e Análise</h1>
 
     <h2>Métricas dos Modelos</h2>
-    <pre>{'LinearRegression': {'R2': 0.4009446596355727, 'RMSE': 1.4723531156261795}, 'RandomForest': {'R2': 0.9999595879739355, 'RMSE': 0.012092993511405067}, 'GradientBoosting': {'R2': 0.9999798762156344, 'RMSE': 0.008533620692224617}, 'XGBoost': {'R2': 0.9999229321072536, 'RMSE': 0.016699953035102168}, 'LightGBM': {'R2': 0.9866625250545578, 'RMSE': 0.21969254298985338}, 'CatBoost': {'R2': 0.9996870292700798, 'RMSE': 0.03365351015247697}}</pre>
+    <table border="1" class="dataframe tabela">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Modelo</th>
+      <th>R²</th>
+      <th>RMSE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LinearRegression</td>
+      <td>0.3364</td>
+      <td>1.4925</td>
+    </tr>
+    <tr>
+      <td>RandomForest</td>
+      <td>0.9999</td>
+      <td>0.0194</td>
+    </tr>
+    <tr>
+      <td>GradientBoosting</td>
+      <td>0.9999</td>
+      <td>0.0159</td>
+    </tr>
+    <tr>
+      <td>XGBoost</td>
+      <td>0.9998</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <td>LightGBM</td>
+      <td>0.9872</td>
+      <td>0.2075</td>
+    </tr>
+    <tr>
+      <td>CatBoost</td>
+      <td>0.9987</td>
+      <td>0.0650</td>
+    </tr>
+  </tbody>
+</table>
 
     <h2>Estatísticas de Rondônia</h2>
-    
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Unnamed: 0</th>
+      <th>Renda_Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>count</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>std</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>75%</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
