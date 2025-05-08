@@ -28,6 +28,7 @@ from lightgbm import LGBMRegressor
 from catboost import CatBoostRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import json
+from gerar_relatorio import gerar_relatorio_html
 
 
 # ------------------------------
@@ -36,7 +37,7 @@ import json
 def formatar_dados_pnad_ajustado(
     caminho_dicionario="data/campos_dicionario.txt",
     caminho_microdados="raw/PNADC_2023_visita1_20241220/PNADC_2023_visita1.txt",
-    n_amostras=100000,
+    n_amostras=20000,
     salvar_em="data/PNAD_2023_formatado.csv"
 ):
     # Leitura do dicionário
@@ -331,11 +332,13 @@ if __name__ == '__main__':
     # 3. Predição
     treinar_modelos(df_renda_valida)
 
-    # 4. Dashboard (manual com comando)
-    # Para rodar: streamlit run pipeline_tcc.py
+    # 4. Geração de relatório
+    gerar_relatorio_html()
+
+    # 5. Dashboard (manual com comando)
+    # Para rodar: python pipeline_tcc.py
     criar_dashboard()
 
-    # comando para rodar o script
-    # streamlit run pipeline_tcc.py
-    # ou
-    # python pipeline_tcc.py
+    
+
+
