@@ -16,6 +16,11 @@ def gerar_relatorio_html():
     with open("resultados_ml/metricas_modelos.json", "r") as f:
         metricas = json.load(f)
 
+    # Transformar o dicionário de métricas em DataFrame
+    df_metricas = pd.DataFrame(metricas).T.reset_index()
+    df_metricas.columns = ['Modelo', 'R²', 'RMSE']
+    tabela_metricas = df_metricas.round(4).to_html(index=False, classes='tabela')
+
     # Estatísticas de Rondônia
     stats_rondonia = pd.read_csv("insumo_dashboard/estatisticas_rondonia.csv").round(2).to_html(index=False)
 
@@ -33,14 +38,23 @@ def gerar_relatorio_html():
     graficos_modelos = [f"grafico_real_predito_{modelo}.png" for modelo in metricas.keys()]
 
     # Renderizar HTML
+   # Estatísticas de Rondônia
+    stats_rondonia = pd.read_csv("insumo_dashboard/estatisticas_rondonia.csv").round(2).to_html(index=False)
+    tabela_estatisticas = stats_rondonia  # <-- ESSA LINHA ESTAVA FALTANDO
+
+    # Renderizar HTML
     env = Environment(loader=FileSystemLoader(template_dir))
     template = env.get_template("template_relatorio.html")
     html_content = template.render(
         metricas=metricas,
         graficos=graficos,
         graficos_modelos=graficos_modelos,
-        stats_rondonia=stats_rondonia
+        stats_rondonia=stats_rondonia,
+        tabela_metricas=tabela_metricas,
+        tabela_estatisticas=tabela_estatisticas  # agora está definida
     )
+
+    tabela_estatisticas = pd.read_csv("insumo_dashboard/estatisticas_rondonia.csv").round(2).to_html(index=False)
 
     # Salvar HTML
     html_path = os.path.join(output_dir, "relatorio.html")
