@@ -325,19 +325,23 @@ def criar_dashboard():
 if __name__ == '__main__':
     # 1. Formatar dados
     df_formatado = formatar_dados_pnad_ajustado()
+    print("✅ Dados formatados com sucesso!")
 
     # 2. Análise exploratória
     df_analise, df_renda_valida = analise_exploratoria(df_formatado)
-
+    print("✅ Análise exploratória realizada com sucesso!")
     # 3. Predição
     treinar_modelos(df_renda_valida)
+    print("✅ Modelos treinados com sucesso!")
 
     # 4. Geração de relatório
     gerar_relatorio_html()
+    print("✅ Relatório gerado com sucesso!")
 
     # 5. Dashboard (manual com comando)
     # Para rodar: python pipeline_tcc.py
     criar_dashboard()
+    print("✅ Dashboard criado com sucesso!")
 
     
 

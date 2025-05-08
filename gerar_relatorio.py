@@ -50,3 +50,6 @@ def gerar_relatorio_html():
     # Converter para PDF
     HTML(html_path).write_pdf(os.path.join(output_dir, "relatorio.pdf"))
     print("✅ Relatório gerado com sucesso!")
+    print("📊 Métricas carregadas:", metricas)
+    print("📋 Estatísticas de Rondônia (head):")
+    print(stats_rondonia)

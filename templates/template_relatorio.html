@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Análise</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1, h2 { color: #2c3e50; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>📊 Relatório de Modelagem e Análise</h1>
+
+    <h2>Métricas dos Modelos</h2>
+    <pre>{{ metricas }}</pre>
+
+    <h2>Estatísticas de Rondônia</h2>
+    {{ tabela_estatisticas | safe }}
+</body>
+</html>
