@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 
 # 📚 Módulos internos
 from libs.formatacao import formatar_dados_pnad
+from libs.exploracao import analise_exploratoria
 from gerar_relatorio import gerar_relatorio_html
 
 # 🤖 Machine Learning
@@ -30,85 +31,6 @@ from sklearn.metrics import mean_squared_error, r2_score
 import streamlit as st
 
 
-# ------------------------------
-# 🔍 Análise Exploratória
-# ------------------------------
-
-def analise_exploratoria(df, rais_path='data/consulta_rais.csv', salvar_em='insumo_dashboard'):
-    os.makedirs(salvar_em, exist_ok=True)
-
-    # ------------------------------
-    # 1. Integração com RAIS
-    # ------------------------------
-    rais_df = pd.read_csv(rais_path)
-    df = df.merge(rais_df, how='left', on=['sigla_uf', 'sexo', 'grau_instrucao', 'faixa_etaria'])
-
-    # ------------------------------
-    # 2. Conversões e colunas auxiliares
-    # ------------------------------
-    df['Idade'] = pd.to_numeric(df['Idade'], errors='coerce')
-    df['Renda_Total'] = pd.to_numeric(df['Renda_Total'], errors='coerce')
-
-    # Faixas etárias
-    bins = [0, 17, 25, 35, 45, 55, 65, 80, 150]
-    labels = ['0–17', '18–25', '26–35', '36–45', '46–55', '56–65', '66–80', '81+']
-    df['Faixa_Etaria'] = pd.cut(df['Idade'], bins=bins, labels=labels, right=False)
-
-    # Renda Zero
-    df['Renda_Zero'] = df['Renda_Total'] == 0
-
-    # Mapeamento da escolaridade
-    map_escolaridade = {
-        2: "Sem instrução", 3: "Fund. 1ª a 4ª série", 4: "Fund. 5ª a 8ª série", 5: "Fundamental completo",
-        6: "Médio incompleto", 7: "Médio completo", 8: "Superior incompleto", 9: "Superior completo",
-        10: "Mestrado incompleto", 11: "Mestrado completo", 12: "Doutorado incompleto", 13: "Doutorado completo",
-        14: "Alfabetização adultos", 15: "Educação infantil"
-    }
-    df['Escolaridade_Label'] = df['grau_instrucao'].map(map_escolaridade)
-
-    # ------------------------------
-    # 3. Estatísticas e gráficos principais
-    # ------------------------------
-    def salvar_grafico(plot_func, filename):
-        plt.figure(figsize=(10,6))
-        plot_func()
-        plt.tight_layout()
-        plt.savefig(os.path.join(salvar_em, filename))
-        plt.close()
-
-    salvar_grafico(lambda: sns.countplot(x='Sexo', data=df), "distribuicao_sexo.png")
-    salvar_grafico(lambda: sns.countplot(x='Cor_Raca', data=df, order=df['Cor_Raca'].value_counts().index), "distribuicao_cor_raca.png")
-    salvar_grafico(lambda: sns.countplot(x='UF', data=df, order=df['UF'].value_counts().index), "distribuicao_uf.png")
-    salvar_grafico(lambda: df.groupby('Escolaridade_Label')['Renda_Total'].mean().sort_values().plot(kind='barh'), "renda_por_escolaridade.png")
-    salvar_grafico(lambda: df.groupby('UF')['Renda_Total'].mean().sort_values().plot(kind='bar'), "renda_por_estado.png")
-
-    # ------------------------------
-    # 4. Foco em Rondônia
-    # ------------------------------
-    df_rondonia = df[df['UF'] == 'Rondônia']
-    df_rondonia[['Renda_Total']].describe().to_csv(os.path.join(salvar_em, 'estatisticas_rondonia.csv'))
-
-    # ------------------------------
-    # 5. Filtragem de renda
-    # ------------------------------
-    df_renda_valida = df[(df['Renda_Total'] > 0) & (df['Renda_Total'] < 1_000_000)]
-
-    salvar_grafico(lambda: df_renda_valida.groupby('UF')['Renda_Total'].mean().sort_values().plot(kind='bar'), "renda_valida_por_estado.png")
-    salvar_grafico(lambda: df_renda_valida.groupby('UF')['Renda_Total'].median().sort_values().plot(kind='bar'), "mediana_renda_estado.png")
-
-    # ------------------------------
-    # 6. Histograma no Espírito Santo
-    # ------------------------------
-    df_es = df_renda_valida[df_renda_valida['UF'] == 'Espírito Santo']
-    salvar_grafico(lambda: df_es['Renda_Total'].hist(bins=50), "histograma_es.png")
-
-    # ------------------------------
-    # 7. Tabelas para dashboard
-    # ------------------------------
-    df.to_csv(os.path.join(salvar_em, 'dados_limpos_exploracao.csv'), index=False, encoding='utf-8-sig')
-    df_renda_valida.to_csv(os.path.join(salvar_em, 'dados_renda_valida.csv'), index=False, encoding='utf-8-sig')
-
-    return df, df_renda_valida
 
 # ------------------------------
 # 🤖 Modelagem e Predição
