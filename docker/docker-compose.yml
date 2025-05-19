@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    volumes:
+      - ../backend/data:/app/backend/data
+      - ../backend/static:/app/backend/static
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ../frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
