@@ -32,6 +32,7 @@ amostra_temp.txt
 # Ignorar arquivos de log
 *.log
 
+
 # Ignorar arquivos de ambiente e config locais
 .env
 .env.local
