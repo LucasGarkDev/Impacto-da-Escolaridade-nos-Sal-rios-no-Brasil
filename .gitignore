@@ -1,22 +1,41 @@
 # Ignorar diretórios
-raw/*
 .venv/
 venv/
+__pycache__/
+node_modules/
+dist/
+build/
 
 # Ignorar arquivos CSV e TXT soltos na raiz
 *.csv
 *.txt
 
-# Ignorar arquivos de notebooks (Jupyter) se forem grandes
+# Ignorar arquivos de notebooks Jupyter
 *.ipynb
 
 # Ignorar arquivos de mapeamento ou intermediários
 mapeamento.py
 
-# Se quiser manter apenas arquivos essenciais, comente os que quer rastrear
-# !README.md  <- Descomente se quiser manter esse arquivo no Git
+# Ignorar arquivos/dados brutos grandes
+pipeline/raw/*
+!pipeline/raw/.gitkeep  # Opcional: manter o diretório mesmo vazio
 
 # Ignorar arquivos grandes específicos
+pipeline/raw/PNADC_2023_visita1_20241220.zip
+pipeline/raw/PNADC_2023_visital_20241220/PNADC_2023_visital.txt
+
+# Ignorar arquivos de amostra e temporários
 amostra_temp.txt
-raw/PNADC_2023_visita1_20241220.zip
-raw/PNADC_2023_visita1_20241220/PNADC_2023_visita1.txt
+*.tmp
+*.bak
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de ambiente e config locais
+.env
+.env.local
+.env.*
+
+# Manter apenas arquivos essenciais
+!README.md
