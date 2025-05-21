@@ -81,7 +81,7 @@ function Sidenav({ color, brandName, routes, ...rest }) {
     if (window.innerWidth < 1440) {
       setTransparentSidenav(dispatch, false);
     }
-  }, []);
+  }, [dispatch]);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
   const renderRoutes = routes.map(({ type, name, icon, title, noCollapse, key, route, href }) => {

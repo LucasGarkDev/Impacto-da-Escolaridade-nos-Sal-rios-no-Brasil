@@ -22,7 +22,7 @@ import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // Custom styles for VuiBox
-import VuiBoxRoot from "components/VuiBox/VuiBoxRoot";
+import VuiBoxRoot from "./VuiBoxRoot";
 
 const VuiBox = forwardRef(
   ({ variant, bgColor, color, opacity, borderRadius, shadow, ...rest }, ref) => (
