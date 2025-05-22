@@ -16,17 +16,17 @@ Este projeto de Trabalho de Conclusão de Curso (TCC) investiga **o impacto da e
 
 Analisar como a escolaridade influencia os salários no Brasil, considerando:
 
-- Região
-- Setor econômico
-- Sexo
-- Cor/Raça
-- Faixa etária
+- Região  
+- Setor econômico  
+- Sexo  
+- Cor/Raça  
+- Faixa etária  
 
 ---
 
 ## 📚 Metodologia
 
-- **Base de Dados**: Microdados da PNADC (IBGE)
+- **Base de Dados**: Microdados da PNADC (IBGE)  
 - **Pré-processamento**:
   - Leitura FWF com `pandas.read_fwf`
   - Amostragem estratificada por UF
@@ -45,71 +45,72 @@ Analisar como a escolaridade influencia os salários no Brasil, considerando:
 
 ## 🧱 Arquitetura do Projeto
 
+```
 📦 devTCC/
 ├── backend/
-│ └── main.py # API com FastAPI
+│   └── main.py                  # API com FastAPI
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── layouts/
-│ │ ├── variables/
-│ │ └── App.jsx
-│ └── vite.config.js
+│   ├── src/
+│   │   ├── components/
+│   │   ├── layouts/
+│   │   ├── variables/
+│   │   └── App.jsx
+│   └── vite.config.js
 ├── pipeline/
-│ ├── pipeline_tcc.py # Script ETL e análises
-│ └── airflow/ # DAGs para automação
+│   ├── pipeline_tcc.py          # Script ETL e análises
+│   └── airflow/                 # DAGs para automação
 ├── docker-compose.yml
 └── README.md
-
+```
 
 ---
 
 ## 📊 Funcionalidades do Dashboard
 
-- **Indicadores principais (cards)**:
-  - ✅ Total de registros analisados
-  - ✅ Média de renda nacional
-  - ✅ Percentual de pessoas com renda zero
+### ✅ Indicadores principais
+- Total de registros analisados  
+- Média de renda nacional  
+- Percentual de pessoas com renda zero  
 
-- **Distribuições demográficas**:
-  - ✅ Percentual por sexo
-  - ✅ Percentual por cor/raça
-  - ✅ Nível de escolaridade
-  - ✅ Distribuição por estado (UF)
+### ✅ Distribuições demográficas
+- Percentual por sexo  
+- Percentual por cor/raça  
+- Nível de escolaridade  
+- Distribuição por estado (UF)  
 
-- **Gráficos de renda média**:
-  - ✅ Por escolaridade
-  - ✅ Por UF (com/sem outliers)
-  - ✅ Por setor econômico
-  - ✅ Comparação por sexo e raça
+### ✅ Gráficos de renda média
+- Por escolaridade  
+- Por UF (com/sem outliers)  
+- Por setor econômico  
+- Comparação por sexo e raça  
 
-- **Mapas interativos**:
-  - ✅ Mapa de renda média por UF
-  - ✅ Mapa de renda zero por UF
+### ✅ Mapas interativos
+- Renda média por UF  
+- Percentual de renda zero por UF  
 
-- **Casos notáveis / Outliers**:
-  - ✅ Pessoas com alta renda e baixa escolaridade
-  - ✅ Ranking das maiores rendas por estado
+### ✅ Casos notáveis / Outliers
+- Pessoas com alta renda e baixa escolaridade  
+- Ranking das maiores rendas por estado  
 
-- **Modelos preditivos e clusterização** *(opcional/avançado)*:
-  - 🔜 Gráfico real vs previsto
-  - 🔜 Dispersão com clusters (K-Means)
-  - 🔜 Tabela de métricas (R², RMSE, MAE)
+### 🔜 Modelos preditivos e clusterização *(em desenvolvimento)*
+- Gráfico real vs previsto  
+- Dispersão com clusters (K-Means)  
+- Tabela de métricas (R², RMSE, MAE)  
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-| Camada         | Ferramentas e Tecnologias                        |
-|----------------|--------------------------------------------------|
-| Linguagem      | Python, JavaScript (React)                      |
-| Backend        | FastAPI, Pandas, Sklearn, Statsmodels           |
-| Frontend       | React.js, Vite, Chart.js, Plotly.js             |
-| ETL            | Pandas, NumPy                                   |
-| Visualização   | Matplotlib, Seaborn, Folium                     |
-| Orquestração   | Apache Airflow                                  |
-| Containerização| Docker, Docker Compose                          |
-| Outros         | VS Code, Git, GitHub, Jupyter Notebooks         |
+| Camada          | Ferramentas e Tecnologias                      |
+|-----------------|------------------------------------------------|
+| **Linguagem**    | Python, JavaScript (React)                    |
+| **Backend**      | FastAPI, Pandas, Sklearn, Statsmodels         |
+| **Frontend**     | React.js, Vite, Chart.js, Plotly.js           |
+| **ETL**          | Pandas, NumPy                                 |
+| **Visualização** | Matplotlib, Seaborn, Folium                   |
+| **Orquestração** | Apache Airflow                                |
+| **Containerização** | Docker, Docker Compose                    |
+| **Outros**       | VS Code, Git, GitHub, Jupyter Notebooks       |
 
 ---
 
@@ -120,45 +121,55 @@ Analisar como a escolaridade influencia os salários no Brasil, considerando:
 ```bash
 git clone https://github.com/seu-usuario/tcc-salarios-escolaridade.git
 cd tcc-salarios-escolaridade
-2. Subir os serviços com Docker
-bash
-Copiar
-Editar
+```
+
+### 2. Subir os serviços com Docker
+
+```bash
 docker-compose up --build
-3. Acessar os serviços
-🌐 Frontend: http://localhost:5173
+```
 
-⚙️ API FastAPI: http://localhost:8000/docs
+### 3. Acessar os serviços
 
-⛅ Airflow (se configurado): http://localhost:8080
+- 🌐 **Frontend**: [http://localhost:5173](http://localhost:5173)  
+- ⚙️ **API FastAPI**: [http://localhost:8000/docs](http://localhost:8000/docs)  
+- ⛅ **Airflow** (se configurado): [http://localhost:8080](http://localhost:8080)  
 
-📈 Resultados Esperados
-✅ Análise estatística da influência da escolaridade nos salários
+---
 
-✅ Visualização interativa para diferentes demografias e regiões
+## 📈 Resultados Esperados
 
-🔍 Insights de desigualdades e padrões regionais/setoriais
+- ✅ Análise estatística da influência da escolaridade nos salários  
+- ✅ Visualização interativa para diferentes demografias e regiões  
+- 🔍 Insights de desigualdades e padrões regionais/setoriais  
+- 🔄 Possibilidade de replicar e expandir para anos diferentes  
 
-🔄 Possibilidade de replicar e expandir para anos diferentes
+---
 
-📋 Status Atual do Projeto
-Etapa	Status
-Pipeline de dados	✅ Concluído
-Análises estatísticas	✅ Concluídas
-Modelos de regressão	✅ Desenvolvidos
-Clusterização	🔜 Em andamento
-Dashboard com React	✅ Funcional
-Integração via API	✅ Parcial
-Automação com Airflow	🔜 Planejada
+## 📋 Status Atual do Projeto
 
-📌 Licença
-Este projeto está sob a Licença MIT. Veja o arquivo LICENSE.md para mais informações.
+| Etapa                     | Status       |
+|--------------------------|--------------|
+| Pipeline de dados        | ✅ Concluído  |
+| Análises estatísticas    | ✅ Concluídas |
+| Modelos de regressão     | ✅ Desenvolvidos |
+| Clusterização            | 🔜 Em andamento |
+| Dashboard com React      | ✅ Funcional  |
+| Integração via API       | ✅ Parcial    |
+| Automação com Airflow    | 🔜 Planejada  |
 
-🤝 Agradecimentos
-Instituto Federal do Espírito Santo - IFES
+---
 
-Professores orientadores do curso de Sistemas de Informação
+## 📌 Licença
 
-Comunidade open-source por bibliotecas incríveis
+Este projeto está sob a Licença MIT. Veja o arquivo `LICENSE.md` para mais informações.
 
-“Educação é a arma mais poderosa que você pode usar para mudar o mundo.” – Nelson Mandela
+---
+
+## 🤝 Agradecimentos
+
+- Instituto Federal do Espírito Santo - IFES  
+- Professores orientadores do curso de Sistemas de Informação  
+- Comunidade open-source por bibliotecas incríveis  
+
+> _“Educação é a arma mais poderosa que você pode usar para mudar o mundo.” – Nelson Mandela_
