@@ -25,6 +25,10 @@
 import hexToRgb from "assets/theme/functions/hexToRgb";
 
 function rgba(color, opacity) {
+  if (color === "transparent") {
+    return `rgba(0, 0, 0, 0)`; // fallback válido e seguro
+  }
+
   return `rgba(${hexToRgb(color)}, ${opacity})`;
 }
 
