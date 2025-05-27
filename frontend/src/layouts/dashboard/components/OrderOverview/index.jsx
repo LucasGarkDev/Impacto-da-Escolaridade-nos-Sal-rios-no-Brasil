@@ -33,7 +33,7 @@ import { SiDropbox } from "react-icons/si";
 
 // Vision UI Dashboard React example components
 import TimelineItem from "examples/Timeline/TimelineItem";
-import AdobeXD from "examples/Icons/AdobeXD";
+import AdobeXD from "examples/Icons/AdobeXD.jsx";
 
 // Vision UI Dashboard theme imports
 import palette from "assets/theme/base/colors";

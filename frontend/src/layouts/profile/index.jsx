@@ -41,8 +41,8 @@ import Footer from "examples/Footer";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 // Overview page components
 import Header from "layouts/profile/components/Header";
-import PlatformSettings from "layouts/profile/components/PlatformSettings";
-import Welcome from "../profile/components/Welcome/index";
+import PlatformSettings from "layouts/profile/components/PlatformSettings.jsx";
+import Welcome from "../profile/components/Welcome/index.jsx";
 import CarInformations from "./components/CarInformations";
 
 function Overview() {

@@ -53,8 +53,8 @@ import { IoDocumentText } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 
 // Data
-import LineChart from "examples/Charts/LineCharts/LineChart";
-import BarChart from "examples/Charts/BarCharts/BarChart";
+import LineChart from "examples/Charts/LineCharts/LineChart.jsx";
+import BarChart from "examples/Charts/BarCharts/BarChart.jsx";
 import { lineChartDataDashboard } from "layouts/dashboard/data/lineChartData";
 import { lineChartOptionsDashboard } from "layouts/dashboard/data/lineChartOptions";
 import { barChartDataDashboard } from "layouts/dashboard/data/barChartData";

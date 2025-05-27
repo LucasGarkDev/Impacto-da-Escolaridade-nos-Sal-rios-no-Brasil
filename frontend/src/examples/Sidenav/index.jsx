@@ -36,8 +36,8 @@ import VuiTypography from "components/VuiTypography";
 import VuiButton from "components/VuiButton";
 
 // Vision UI Dashboard React example components
-import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
-import SidenavCard from "examples/Sidenav/SidenavCard";
+import SidenavCollapse from "examples/Sidenav/SidenavCollapse.jsx";
+import SidenavCard from "examples/Sidenav/SidenavCard.jsx";
 
 // Custom styles for the Sidenav
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
@@ -47,7 +47,7 @@ import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 import { useVisionUIController, setMiniSidenav, setTransparentSidenav } from "context";
 
 // Vision UI Dashboard React icons
-import SimmmpleLogo from "examples/Icons/SimmmpleLogo";
+import SimmmpleLogo from "examples/Icons/SimmmpleLogo.jsx";
 
 // function Sidenav({ color, brand, brandName, routes, ...rest }) {
 function Sidenav({ color, brandName, routes, ...rest }) {

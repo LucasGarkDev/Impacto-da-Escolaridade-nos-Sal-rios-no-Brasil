@@ -27,7 +27,7 @@ import Menu from "@mui/material/Menu";
 import VuiBox from "components/VuiBox";
 
 // Vision UI Dashboard React example components
-import DefaultNavbarLink from "examples/Navbars/DefaultNavbar/DefaultNavbarLink";
+import DefaultNavbarLink from "examples/Navbars/DefaultNavbar/DefaultNavbarLink.jsx";
 import palette from "assets/theme/base/colors";
 import tripleLinearGradient from "assets/theme/functions/tripleLinearGradient";
 

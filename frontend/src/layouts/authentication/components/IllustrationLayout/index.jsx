@@ -31,7 +31,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Vision UI Dashboard React page layout routes
-import pageRoutes from "page.routes";
+import pageRoutes from "page.routes.jsx";
 
 // Images
 import pattern from "assets/images/shapes/pattern-lines.svg";

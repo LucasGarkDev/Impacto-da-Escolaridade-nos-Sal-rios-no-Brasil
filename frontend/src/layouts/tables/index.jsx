@@ -30,8 +30,8 @@ import Footer from "examples/Footer";
 import Table from "examples/Tables/Table";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
-import projectsTableData from "layouts/tables/data/projectsTableData";
+import authorsTableData from "layouts/tables/data/authorsTableData.jsx";
+import projectsTableData from "layouts/tables/data/projectsTableData.jsx";
 
 function Tables() {
   const { columns, rows } = authorsTableData;

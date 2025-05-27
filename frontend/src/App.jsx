@@ -43,7 +43,7 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
 // Vision UI Dashboard React routes
-import routes from "./routes";
+import routes from "./routes.jsx";
 
 // Vision UI Dashboard React contexts
 import {
