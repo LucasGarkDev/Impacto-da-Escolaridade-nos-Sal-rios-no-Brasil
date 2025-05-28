@@ -18,6 +18,7 @@ export default defineConfig({
       examples: path.resolve(__dirname, 'src/examples'),
       context: path.resolve(__dirname, 'src/context'),
       variables: path.resolve(__dirname, 'src/variables'),
+      pages: path.resolve(__dirname, 'src/pages'),
     },
   },
 });
