@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import VuiTypography from "components/VuiTypography";
 import AlertSample from "./samples/AlertSample";
+import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
+
 
 // ⬇️ Wrapper para seções nomeadas de testes
 const Section = ({ title, children }) => (
@@ -15,6 +17,7 @@ const Section = ({ title, children }) => (
     <Divider sx={{ mb: 2 }} />
     {children}
   </Card>
+  
 );
 
 // 💎 Página principal do laboratório
@@ -32,14 +35,31 @@ const ComponentLab = () => {
           </Section>
         </Grid>
 
-        {/* 🧩 Adicione novos testes de componentes assim: */}
-        {/* <Grid item xs={12} md={6}>
-          <Section title="📦 Meu Novo Componente">
-            <MeuComponente />
+        {/* essa e a parte onde voce coloca os componentes que deseja testar */}
+        {/* ======================================================================== */}
+        <Grid item xs={12} md={6}>
+          <Section title="📇 ProfileInfoCard (perfil)">
+            <ProfileInfoCard
+              title="Usuário"
+              description="Descrição fictícia de exemplo"
+              info={{
+                fullName: "João da Silva",
+                mobile: "(11) 99999-9999",
+                email: "joao@email.com",
+                location: "São Paulo, Brasil",
+              }}
+              social={[]} // ✅ Adicionado para evitar erro
+              action={{ route: "", tooltip: "Editar Perfil" }}
+              shadow={false}
+            />
           </Section>
-        </Grid> */}
+        </Grid>
+        {/* =============================================================== */}
+
+        
       </Grid>
     </Box>
+      
   );
 };
 

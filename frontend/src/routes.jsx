@@ -128,7 +128,8 @@ const routes = [
     key: "component-lab",
     route: "/component-lab",
     component: ComponentLab,
-    noCollapse: true
+    layout: "bare", // ← ESSENCIAL
+    noCollapse: true,
   },
 ];
 

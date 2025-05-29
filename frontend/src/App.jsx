@@ -52,6 +52,9 @@ import {
   setOpenConfigurator,
 } from "./context";
 
+import ComponentLab from "pages/ComponentLab";
+
+
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
   const { miniSidenav, direction, layout, openConfigurator, sidenavColor } = controller;
@@ -99,14 +102,20 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
+  
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
+      if (route.collapse) return getRoutes(route.collapse);
 
       if (route.route) {
-        return <Route exact path={route.route} component={route.component} key={route.key} />;
+        return (
+          <Route
+            exact
+            path={route.route}
+            component={route.component}
+            key={route.key}
+          />
+        );
       }
 
       return null;
@@ -135,6 +144,16 @@ export default function App() {
       </Icon>
     </VuiBox>
   );
+
+  // 👇👇 ESSA PARTE NOVA É O SEGREDO 👇👇
+  if (pathname === "/component-lab") {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <ComponentLab />
+      </ThemeProvider>
+    );
+  }
 
   return direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
