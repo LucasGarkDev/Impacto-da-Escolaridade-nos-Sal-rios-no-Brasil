@@ -28,7 +28,7 @@ import colors from "assets/theme/base/colors";
 // Vision UI Dashboard React Helper Functions
 import boxShadow from "assets/theme/functions/boxShadow";
 
-const { black, white, info, inputColors, tabs } = colors;
+const { black, white, info, inputColors, tabs, primary } = colors;
 
 export default {
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),
@@ -70,7 +70,7 @@ export default {
     stateOfNotHover: boxShadow([0, 0], [0, 3.2], info.main, 0.5),
   },
   inputBoxShadow: {
-    focus: boxShadow([0, 0], [0, 2], inputColors.boxShadow, 1),
+    focus: boxShadow([0, 0], [0, 2], primary.main, 0.3),
     error: boxShadow([0, 0], [0, 2], inputColors.error, 0.6),
     success: boxShadow([0, 0], [0, 2], inputColors.success, 0.6),
   },

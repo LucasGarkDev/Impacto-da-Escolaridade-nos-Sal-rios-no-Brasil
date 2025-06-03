@@ -28,12 +28,15 @@ import colors from "assets/theme/base/colors";
 // Vision UI Dashboard React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { borderCol } = colors;
+const {
+  custom: { border },
+  white,
+} = colors;
 
 export default {
   borderColor: {
-    grey: { borderCol },
-    white: "rgba(226, 232, 240, 0.3)",
+    base: border, // #CCCCCC — nova borda padrão
+    white: white.main,
   },
 
   borderWidth: {
@@ -48,12 +51,12 @@ export default {
   borderRadius: {
     xs: pxToRem(2),
     sm: pxToRem(4),
-    md: pxToRem(8),
-    button: pxToRem(12),
-    lg: pxToRem(15),
+    md: pxToRem(6),       // 🔄 ajuste para suavizar UI
+    button: pxToRem(10),  // 🔄 mais compacto e moderno
+    lg: pxToRem(14),
     xl: pxToRem(20),
     xxl: pxToRem(24),
-    form: pxToRem(24),
-    section: pxToRem(160),
+    form: pxToRem(16),    // 🔄 menos curvo para campos
+    section: pxToRem(48), // 🔄 de 160 → 48 (mais sensato)
   },
 };

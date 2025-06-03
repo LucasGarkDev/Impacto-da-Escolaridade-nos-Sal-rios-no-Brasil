@@ -24,11 +24,11 @@
 
 export default {
   values: {
-    xs: 375,
-    sm: 425,
-    md: 768,
-    lg: 1024,
-    xl: 1440,
-    xxl: 1680,
+    xs: 0,        // mobile pequeno
+    sm: 600,      // mobile grande
+    md: 900,      // tablet
+    lg: 1200,     // desktop
+    xl: 1536,     // wide desktop
   },
 };
+

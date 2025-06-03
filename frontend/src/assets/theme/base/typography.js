@@ -26,19 +26,18 @@
 
 import colors from "assets/theme/base/colors";
 import "./typography.css";
-
-// Vision UI Dashboard React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { dark } = colors;
+const { text } = colors;
 
 const baseProperties = {
-  fontFamily: '"Plus Jakarta Display", "Helvetica", "Arial", sans-serif',
+  fontFamily: '"Rubik", "Helvetica", "Arial", sans-serif',
   fontWeightLight: 300,
   fontWeightRegular: 400,
   fontWeightMedium: 500,
+  fontWeightSemiBold: 600, // ADICIONAR
   fontWeightBold: 700,
-  fontSizeXXS: pxToRem(10.4),
+  fontSizeXXS: pxToRem(10),
   fontSizeXS: pxToRem(12),
   fontSizeSM: pxToRem(14),
   fontSizeRegular: pxToRem(16),
@@ -48,16 +47,18 @@ const baseProperties = {
 
 const baseHeadingProperties = {
   fontFamily: baseProperties.fontFamily,
-  color: dark.main,
-  fontWeight: baseProperties.fontWeightMedium,
+  color: text.main,
+  fontWeight: baseProperties.fontWeightSemiBold,
 };
+
 
 const baseDisplayProperties = {
   fontFamily: baseProperties.fontFamily,
-  color: dark.main,
-  fontWeight: baseProperties.fontWeightLight,
-  lineHeight: 1.2,
+  color: text.main,
+  fontWeight: baseProperties.fontWeightBold, // antes: Light
+  lineHeight: 1.15,
 };
+
 
 const typography = {
   fontFamily: baseProperties.fontFamily,
@@ -67,127 +68,102 @@ const typography = {
   fontWeightBold: baseProperties.fontWeightBold,
 
   h1: {
-    fontSize: pxToRem(48),
+    fontSize: pxToRem(40),
     lineHeight: 1.25,
     ...baseHeadingProperties,
   },
-
   h2: {
-    fontSize: pxToRem(36),
+    fontSize: pxToRem(32),
     lineHeight: 1.3,
     ...baseHeadingProperties,
   },
-
   h3: {
-    fontSize: pxToRem(30),
+    fontSize: pxToRem(28),
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
-
   h4: {
     fontSize: pxToRem(24),
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
-
   h5: {
     fontSize: pxToRem(20),
     lineHeight: 1.375,
     ...baseHeadingProperties,
   },
-
   h6: {
     fontSize: pxToRem(16),
     lineHeight: 1.625,
     ...baseHeadingProperties,
   },
 
-  lg: {
-    fontSize: pxToRem(18),
-    lineHeight: 1.625,
-    ...baseHeadingProperties,
-  },
-
-  xxs: {
-    fontSize: pxToRem(10),
-    lineHeight: 1.625,
-    ...baseHeadingProperties,
-  },
-
   subtitle1: {
-    fontFamily: baseProperties.fontFamily,
-    fontSize: baseProperties.fontSizeXL,
-    fontWeight: baseProperties.fontWeightRegular,
-    lineHeight: 1.625,
+    fontSize: baseProperties.fontSizeLG,
+    fontWeight: baseProperties.fontWeightMedium,
+    lineHeight: 1.6,
   },
 
   subtitle2: {
-    fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeRegular,
     fontWeight: baseProperties.fontWeightMedium,
     lineHeight: 1.6,
   },
 
   body1: {
-    fontFamily: baseProperties.fontFamily,
-    fontSize: baseProperties.fontSizeXL,
-    fontWeight: baseProperties.fontWeightRegular,
-    lineHeight: 1.625,
-  },
-
-  body2: {
-    fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeRegular,
     fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.6,
   },
 
-  button: {
-    fontFamily: baseProperties.fontFamily,
+  body2: {
     fontSize: baseProperties.fontSizeSM,
-    fontWeight: baseProperties.fontWeightBold,
+    fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.5,
-    textTransform: "uppercase",
+  },
+
+  button: {
+    fontSize: baseProperties.fontSizeSM,
+    fontWeight: baseProperties.fontWeightMedium,
+    textTransform: "none", // antes: uppercase
+    lineHeight: 1.4,
   },
 
   caption: {
-    fontFamily: baseProperties.fontFamily,
     fontSize: baseProperties.fontSizeXS,
     fontWeight: baseProperties.fontWeightRegular,
     lineHeight: 1.25,
   },
 
   overline: {
-    fontFamily: baseProperties.fontFamily,
+    fontSize: baseProperties.fontSizeXS,
+    fontWeight: baseProperties.fontWeightRegular,
+    letterSpacing: "1px",
+    textTransform: "uppercase",
   },
 
   d1: {
-    fontSize: pxToRem(80),
-    ...baseDisplayProperties,
-  },
-
-  d2: {
-    fontSize: pxToRem(72),
-    ...baseDisplayProperties,
-  },
-
-  d3: {
     fontSize: pxToRem(64),
     ...baseDisplayProperties,
   },
-
-  d4: {
+  d2: {
     fontSize: pxToRem(56),
     ...baseDisplayProperties,
   },
-
-  d5: {
+  d3: {
     fontSize: pxToRem(48),
     ...baseDisplayProperties,
   },
-
-  d6: {
+  d4: {
     fontSize: pxToRem(40),
+    ...baseDisplayProperties,
+  },
+  d5: {
+    fontSize: pxToRem(32),
+    ...baseDisplayProperties,
+  },
+  d6: {
+    fontSize: pxToRem(24),
     ...baseDisplayProperties,
   },
 
@@ -208,3 +184,4 @@ const typography = {
 };
 
 export default typography;
+

@@ -24,7 +24,7 @@
 export default {
   // Vision UI Colors
   background: {
-    default: "#f8f9fa",
+    default: "#F5F5F5", // fundo claro geral
   },
 
   sidenav: {
@@ -32,8 +32,8 @@ export default {
   },
 
   text: {
-    main: "#a0aec0",
-    focus: "#ffffff",
+    main: "#111111", // ou "#000000" se quiser preto total
+    focus: "#000000",
   },
 
   transparent: {
@@ -41,8 +41,8 @@ export default {
   },
 
   white: {
-    main: "#ffffff",
-    focus: "#ffffff",
+    main: "#FFFFFF",
+    focus: "#FFFFFF",
   },
 
   brand: {
@@ -51,19 +51,19 @@ export default {
   },
 
   black: {
-    light: "#141414",
-    main: "#000000",
+    light: "#666666",
+    main: "#333333",
     focus: "#000000",
   },
 
   primary: {
-    main: "#4318ff",
-    focus: "#9f7aea",
+    main: "#0077B6",  // Azul Petróleo (Superior)
+    focus: "#005f8d",
   },
 
   secondary: {
-    main: "#0f1535",
-    focus: "#131538",
+    main: "#2A9D8F", // Verde Esmeralda (Médio)
+    focus: "#1e7f73",
   },
 
   lightblue: {
@@ -96,8 +96,8 @@ export default {
 
   // Other colors
   info: {
-    main: "#0075ff",
-    focus: "#3993fe",
+    main: "#6A0572", // Roxo Profundo (Pós-graduação)
+    focus: "#52045a",
     charts: {
       100: "#2d8cfc",
       200: "#2370cc",
@@ -109,18 +109,18 @@ export default {
   },
 
   success: {
-    main: "#01b574",
-    focus: "#35d28a",
+    main: "#2A9D8F", // mesmo do médio
+    focus: "#218274",
   },
 
   warning: {
-    main: "#ffb547",
-    focus: "#ffcd75",
+    main: "#F4A261", // Laranja Queimado (Fundamental)
+    focus: "#d98a50",
   },
 
   error: {
-    main: "#e31a1a",
-    focus: "#ee5d50",
+    main: "#E76F51", // Vermelho Coral (Sem escolaridade)
+    focus: "#c95e46",
   },
 
   light: {
@@ -136,15 +136,15 @@ export default {
 
   gradients: {
     navbar: {
-      deg: "123.64deg",
-      main: "rgba(255, 255, 255, 0) -22.38%",
-      state: "rgba(255, 255, 255, 0.039) 70.38%",
+      deg: "90deg",
+      main: "#F5F5F5", // ou um tom do seu mapa TCC
+      state: "#CCCCCC",
     },
 
     sidenav: {
-      deg: "127.09",
-      main: "rgba(6, 11, 40, 0.94) 19.41%",
-      state: "rgba(10, 14, 35, 0.49) 76.65%",
+      deg: "90deg",
+      main: "#F5F5F5",
+      state: "#CCCCCC",
     },
 
     borderLight: {
@@ -179,9 +179,9 @@ export default {
     },
 
     card: {
-      deg: "127.09",
-      main: "rgba(6, 11, 40, 0.94) 19.41%",
-      state: "rgba(10, 14, 35, 0.49) 76.65%",
+      deg: "135deg",
+      main: "#FFFFFF",
+      state: "#F5F5F5",
     },
 
     menu: {
@@ -197,9 +197,9 @@ export default {
     },
 
     box: {
-      deg: "126.97",
-      main: "rgba(6, 11, 40, 0.74) 28.26%",
-      state: "rgba(10, 14, 35, 0.71) 91.2%",
+      deg: "135deg",
+      main: "#FFFFFF",
+      state: "#F5F5F5",
     },
 
     bill: {
@@ -209,9 +209,9 @@ export default {
     },
 
     primary: {
-      deg: "97.89",
-      main: "#4318ff",
-      state: "#9f7aea",
+      deg: "90deg",
+      main: "#0077B6",
+      state: "#005f8d",
     },
 
     secondary: {
@@ -231,28 +231,28 @@ export default {
     },
 
     success: {
-      main: "#01B574",
-      state: "#c9fbd5",
+      main: "#2A9D8F",
+      state: "#218274",
     },
 
     warning: {
-      main: "#f53939",
-      state: "#fbcf33",
+      main: "#F4A261",
+      state: "#d98a50",
     },
 
     error: {
-      main: "#f53c2b",
-      state: "#f53c2b",
+      main: "#E76F51",
+      state: "#c95e46",
     },
 
     light: {
-      main: "#ced4da",
-      state: "#ebeff4",
+      main: "#F5F5F5",
+      state: "#FFFFFF",
     },
 
     dark: {
-      main: "#141727",
-      state: "#3a416f",
+      main: "#333333",
+      state: "#000000",
     },
   },
 
@@ -320,9 +320,9 @@ export default {
 
   alertColors: {
     primary: {
-      main: "#7928ca",
-      state: "#d6006c",
-      border: "#efb6e2",
+      main: "#0077B6", // azul petróleo
+      state: "#005f8d",
+      border: "#B5D3E7",
     },
 
     secondary: {
@@ -332,27 +332,27 @@ export default {
     },
 
     info: {
-      main: "#2152ff",
-      state: "#02c6f3",
-      border: "#b9ecf8",
+      main: "#6A0572",
+      state: "#52045a",
+      border: "#E6C6EC",
     },
 
     success: {
-      main: "#17ad37",
-      state: "#84dc14",
-      border: "#daf3b9",
+      main: "#2A9D8F", // verde esmeralda
+      state: "#218274",
+      border: "#BCE6DD",
     },
 
     warning: {
-      main: "#f53939",
-      state: "#fac60b",
-      border: "#fef1c2",
+      main: "#F4A261",
+      state: "#d98a50",
+      border: "#FBE8D1",
     },
 
     error: {
-      main: "#ea0606",
-      state: "#ff3d59",
-      border: "#f9b4b4",
+      main: "#E76F51",
+      state: "#c95e46",
+      border: "#F9C6B9",
     },
 
     light: {
@@ -416,15 +416,70 @@ export default {
       background: "#1E244B",
       text: "#fff",
     },
+
+    fundamental: {
+      basic: "#F4A261",
+      background: "#FBE8D1",
+      text: "#7A492A",
+    },
+
+    medio: {
+      basic: "#2A9D8F",
+      background: "#D2F0EA",
+      text: "#0B4D44",
+    },
+
+    superior: {
+      basic: "#0077B6",
+      background: "#B5D3E7",
+      text: "#00334E",
+    },
+
+    pos: {
+      basic: "#6A0572",
+      background: "#E6C6EC",
+      text: "#3A0240",
+    },
+
+    sem: {
+      basic: "#E76F51",
+      background: "#F9C6B9",
+      text: "#6E2F23",
+    },
   },
 
+  // Cores personalizadas do TCC
+  custom: {
+    escolaridade: {
+      fundamental: "#F4A261",
+      medio: "#2A9D8F",
+      superior: "#0077B6",
+      pos: "#6A0572",
+      sem: "#E76F51",
+    },
+    backgroundBase: "#F5F5F5",
+    backgroundCard: "#FFFFFF",
+    border: "#CCCCCC",
+    textMain: "#111111",
+    textContrast: "#FFFFFF",
+    mapas: {
+      superior: ["#B5D3E7", "#0077B6"],
+      desigualdade: ["#E76F51", "#F5F5F5", "#2A9D8F"],
+    },
+  },
+
+
   inputColors: {
-    backgroundColor: "#0f1535",
-    borderColor: { main: "rgba(226, 232, 240, 0.3)", focus: "rgba(226, 232, 240, 0.6)" },
-    boxShadow: "#628fc2",
+    backgroundColor: "#FFFFFF",
+    borderColor: {
+      main: "#CCCCCC",
+      focus: "#999999",
+    },
+    boxShadow: "#0077B6", // <- precisa ser um valor hexadecimal puro
     error: "#fd5c70",
     success: "#66d432",
   },
+
 
   sliderColors: {
     thumb: { borderColor: "#d9d9d9" },
