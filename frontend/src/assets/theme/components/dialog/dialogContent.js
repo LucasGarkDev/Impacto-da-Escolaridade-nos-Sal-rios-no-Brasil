@@ -24,21 +24,25 @@ import colors from "assets/theme/base/colors";
 // Vision UI Dashboard React helper functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { size } = typography;
-const { text } = colors;
+const { size, lineHeight } = typography;
+const { text, grey } = colors;
 const { borderWidth, borderColor } = borders;
 
 export default {
   styleOverrides: {
     root: {
-      padding: pxToRem(16),
-      fontSize: size.md,
+      padding: `${pxToRem(20)} ${pxToRem(24)}`,
+      fontSize: size.regular,
+      lineHeight: lineHeight.regular,
       color: text.main,
+      backgroundColor: grey[50], // leve suavidade de fundo
+      borderRadius: pxToRem(12),
     },
 
     dividers: {
       borderTop: `${borderWidth[1]} solid ${borderColor}`,
       borderBottom: `${borderWidth[1]} solid ${borderColor}`,
+      margin: `${pxToRem(16)} 0`,
     },
   },
 };

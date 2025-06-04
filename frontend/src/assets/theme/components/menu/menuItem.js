@@ -24,25 +24,27 @@ import typography from "assets/theme/base/typography";
 // Vision UI Dashboard React helper functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { light, text, dark } = colors;
+const { text, info } = colors;
 const { borderRadius } = borders;
-const { size } = typography;
+const { size, fontWeightMedium } = typography;
 
 export default {
   styleOverrides: {
     root: {
       minWidth: pxToRem(160),
-      minHeight: "unset",
-      padding: `${pxToRem(4.8)} ${pxToRem(16)}`,
-      borderRadius: borderRadius.md,
+      minHeight: pxToRem(36),
+      padding: `${pxToRem(6)} ${pxToRem(18)}`,
+      borderRadius: borderRadius.sm,
       fontSize: size.sm,
+      fontWeight: fontWeightMedium,
       color: text.main,
-      transition: "background-color 300ms ease, color 300ms ease",
+      transition: "all 200ms ease",
 
       "&:hover, &:focus, &.Mui-selected, &.Mui-selected:hover, &.Mui-selected:focus": {
-        backgroundColor: light.main,
-        color: dark.main,
+        backgroundColor: info.main,
+        color: "#fff",
       },
     },
   },
 };
+

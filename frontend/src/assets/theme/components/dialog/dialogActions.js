@@ -22,7 +22,10 @@ import pxToRem from "assets/theme/functions/pxToRem";
 export default {
   styleOverrides: {
     root: {
-      padding: pxToRem(16),
+      padding: pxToRem(20),
+      justifyContent: "flex-end",
+      display: "flex",
+      gap: pxToRem(12), // espaço entre botões
     },
   },
 };

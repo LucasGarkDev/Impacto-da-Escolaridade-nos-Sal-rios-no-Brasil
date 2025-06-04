@@ -16,11 +16,21 @@
 
 */
 
+import colors from "assets/theme/base/colors";
+import typography from "assets/theme/base/typography";
+
+const { text } = colors;
+const { size } = typography;
+
 export default {
   styleOverrides: {
     root: {
+      color: text.main,
+      fontSize: size.sm,
+      lineHeight: 1.4,
       marginTop: 0,
       marginBottom: 0,
     },
   },
 };
+

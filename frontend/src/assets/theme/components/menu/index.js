@@ -21,16 +21,15 @@ import boxShadows from "assets/theme/base/boxShadows";
 import typography from "assets/theme/base/typography";
 import colors from "assets/theme/base/colors";
 import borders from "assets/theme/base/borders";
-import linearGradient from "assets/theme/functions/linearGradient";
+// import linearGradient from "assets/theme/functions/linearGradient";
 
 // Vision UI Dashboard React helper functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { borderWidth } = borders;
+const { borderWidth, borderRadius } = borders;
 const { lg } = boxShadows;
 const { size } = typography;
-const { white, borderCol, gradients, transparent } = colors;
-const { borderRadius } = borders;
+const { text, white, gradients, grey, custom } = colors;
 
 export default {
   defaultProps: {
@@ -39,26 +38,34 @@ export default {
 
   styleOverrides: {
     "& .MuiIcon-root": {
-      stroke: white.main,
+      stroke: text.main,
     },
+
     paper: {
-      minWidth: pxToRem(160),
+      minWidth: pxToRem(180),
       boxShadow: lg,
-      padding: `0 !important`,
+      padding: 0,
       fontSize: size.sm,
-      color: white.main,
+      color: text.main,
+      background: white.main,
       textAlign: "left",
-      border: `${borderWidth[1]} solid ${borderCol.navbar}`,
+      border: `${borderWidth[1]} solid ${grey[300]}`,
       borderRadius: borderRadius.md,
     },
+
     list: {
-      background: linearGradient(gradients.menu.main, gradients.menu.state, gradients.menu.deg),
+      background: white.main,
+
       "& .MuiMenuItem-root": {
         "& .MuiBox-root .MuiTypography-root": {
-          color: white.main,
+          color: text.main,
         },
         "&:hover": {
-          background: transparent.main,
+          backgroundColor: grey[200],
+        },
+        "&.Mui-selected, &.Mui-selected:hover": {
+          backgroundColor: custom.light || gradients.info.main,
+          color: white.main,
         },
       },
     },

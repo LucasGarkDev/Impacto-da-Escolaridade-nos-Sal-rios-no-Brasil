@@ -16,6 +16,13 @@
 
 */
 
+import colors from "assets/theme/base/colors";
+import borders from "assets/theme/base/borders";
+import pxToRem from "assets/theme/functions/pxToRem";
+
+const { grey } = colors;
+const { borderRadius } = borders;
+
 export default {
   defaultProps: {
     disableGutters: true,
@@ -23,8 +30,26 @@ export default {
 
   styleOverrides: {
     root: {
-      paddingTop: 0,
-      paddingBottom: 0,
+      paddingTop: pxToRem(6),
+      paddingBottom: pxToRem(6),
+      paddingLeft: pxToRem(16),
+      paddingRight: pxToRem(16),
+      borderRadius: borderRadius.md,
+      transition: "background-color 200ms ease, color 200ms ease",
+
+      "&:hover": {
+        backgroundColor: grey[200],
+      },
+
+      "&.Mui-selected": {
+        backgroundColor: grey[300],
+        color: grey[900],
+
+        "&:hover": {
+          backgroundColor: grey[400],
+        },
+      },
     },
   },
 };
+

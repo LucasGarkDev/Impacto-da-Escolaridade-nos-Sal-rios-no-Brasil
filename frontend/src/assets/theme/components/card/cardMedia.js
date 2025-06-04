@@ -16,10 +16,7 @@
 
 */
 
-// Vision UI Dashboard React Base Styles
 import borders from "assets/theme/base/borders";
-
-// Vision UI Dashboard React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
 const { borderRadius } = borders;
@@ -27,12 +24,15 @@ const { borderRadius } = borders;
 export default {
   styleOverrides: {
     root: {
-      borderRadius: borderRadius.xl,
+      borderRadius: borderRadius.lg, // um pouco menor para combinar com `card`
       margin: `${pxToRem(16)} ${pxToRem(16)} 0`,
+      overflow: "hidden", // evita imagens saindo da borda
     },
 
     media: {
-      width: "auto",
+      width: "100%",
+      objectFit: "cover", // garante proporção mais bonita
+      display: "block",
     },
   },
 };

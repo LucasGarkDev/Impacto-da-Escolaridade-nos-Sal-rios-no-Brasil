@@ -19,15 +19,19 @@
 // Vision UI Dashboard React base styles
 import borders from "assets/theme/base/borders";
 import boxShadows from "assets/theme/base/boxShadows";
+import colors from "assets/theme/base/colors";
 
 const { borderRadius } = borders;
 const { xxl } = boxShadows;
+const { white } = colors;
 
 export default {
   styleOverrides: {
     paper: {
       borderRadius: borderRadius.lg,
       boxShadow: xxl,
+      backgroundColor: white.main,
+      transition: "all 200ms ease-in-out",
     },
 
     paperFullScreen: {
