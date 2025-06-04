@@ -80,4 +80,5 @@ export default {
   tabsBoxShadow: {
     indicator: boxShadow([0, 1], [5, 1], tabs.indicator.boxShadow, 1),
   },
+  cardShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
 };

@@ -28,19 +28,21 @@ export default {
   },
   styleOverrides: {
     root: { ...root },
+
+    // Contained
     contained: { ...contained.base },
-    containedSizeSmall: { ...contained.small },
-    containedSizeLarge: { ...contained.large },
+    sizeSmall: { ...contained.small },
+    sizeLarge: { ...contained.large },
     containedPrimary: { ...contained.primary },
     containedSecondary: { ...contained.secondary },
+
+    // Outlined
     outlined: { ...outlined.base },
-    outlinedSizeSmall: { ...outlined.small },
-    outlinedSizeLarge: { ...outlined.large },
     outlinedPrimary: { ...outlined.primary },
     outlinedSecondary: { ...outlined.secondary },
+
+    // Text
     text: { ...text.base },
-    textSizeSmall: { ...text.small },
-    textSizeLarge: { ...text.large },
     textPrimary: { ...text.primary },
     textSecondary: { ...text.secondary },
   },

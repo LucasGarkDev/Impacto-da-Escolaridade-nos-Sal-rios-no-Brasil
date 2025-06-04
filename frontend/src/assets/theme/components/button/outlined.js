@@ -16,82 +16,59 @@
 
 */
 
-// Vision UI Dashboard React Base Styles
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
-import boxShadows from "assets/theme/base/boxShadows";
-
-// Vision UI Dashboard React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { transparent, light, info, secondary } = colors;
+const { info, secondary, dark } = colors;
 const { size } = typography;
-const { buttonBoxShadow } = boxShadows;
 
 export default {
   base: {
-    minHeight: pxToRem(42),
-    color: light.main,
-    borderColor: light.main,
-    padding: `${pxToRem(12)} ${pxToRem(24)}`,
+    color: dark.main,
+    border: `${pxToRem(2)} solid ${dark.main}`,
+    backgroundColor: "transparent",
+    borderRadius: pxToRem(8),
+    fontWeight: 500,
+    fontSize: size.sm,
+    transition: "all 200ms ease",
 
     "&:hover": {
-      opacity: 0.75,
-      backgroundColor: transparent.main,
-    },
-
-    "&:focus:not(:hover)": {
-      boxShadow: buttonBoxShadow.stateOfNotHover,
-    },
-
-    "& .material-icon, .material-icons-round, svg": {
-      fontSize: `${pxToRem(16)} !important`,
+      backgroundColor: dark.main,
+      color: "#fff",
+      transform: "translateY(-1px)",
     },
   },
 
   small: {
     minHeight: pxToRem(34),
-    padding: `${pxToRem(8)} ${pxToRem(32)}`,
     fontSize: size.xs,
-
-    "& .material-icon, .material-icons-round, svg": {
-      fontSize: `${pxToRem(12)} !important`,
-    },
+    padding: `${pxToRem(6)} ${pxToRem(18)}`,
   },
 
   large: {
-    minHeight: pxToRem(49),
-    padding: `${pxToRem(14)} ${pxToRem(64)}`,
-    fontSize: size.sm,
-
-    "& .material-icon, .material-icons-round, svg": {
-      fontSize: `${pxToRem(22)} !important`,
-    },
+    minHeight: pxToRem(52),
+    fontSize: size.md,
+    padding: `${pxToRem(12)} ${pxToRem(32)}`,
   },
 
   primary: {
-    backgroundColor: transparent.main,
     borderColor: info.main,
+    color: info.main,
 
     "&:hover": {
-      backgroundColor: transparent.main,
-    },
-
-    "&:focus:not(:hover)": {
-      boxShadow: buttonBoxShadow.stateOfNotHover,
+      backgroundColor: info.main,
+      color: "#fff",
     },
   },
 
   secondary: {
-    backgroundColor: transparent.main,
     borderColor: secondary.main,
+    color: secondary.main,
 
     "&:hover": {
-      backgroundColor: transparent.main,
-    },
-
-    "&:focus:not(:hover)": {
-      boxShadow: buttonBoxShadow.stateOfNotHover,
+      backgroundColor: secondary.main,
+      color: "#fff",
     },
   },
 };

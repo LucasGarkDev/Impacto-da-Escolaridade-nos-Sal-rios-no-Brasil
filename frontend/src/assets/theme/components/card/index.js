@@ -17,6 +17,7 @@
 */
 
 // Vision UI Dashboard React Base Styles
+// Vision UI Dashboard React Base Styles
 import colors from "assets/theme/base/colors";
 import linearGradient from "assets/theme/functions/linearGradient";
 import borders from "assets/theme/base/borders";
@@ -26,25 +27,31 @@ import boxShadows from "assets/theme/base/boxShadows";
 import rgba from "assets/theme/functions/rgba";
 
 const { black, gradients } = colors;
-const { card } = gradients;
+const { newCard } = gradients; // novo gradiente adicionado em colors.js
 const { borderWidth, borderRadius } = borders;
-const { xxl } = boxShadows;
+const { cardShadow } = boxShadows; // nova sombra custom (ver abaixo)
 
 export default {
   styleOverrides: {
     root: {
       display: "flex",
       flexDirection: "column",
-      background: linearGradient(card.main, card.state, card.deg),
-      backdropFilter: "blur(120px)",
+      background: linearGradient(newCard.main, newCard.state, newCard.deg),
+      backdropFilter: "blur(20px)",
       position: "relative",
       minWidth: 0,
       padding: "22px",
       wordWrap: "break-word",
       backgroundClip: "border-box",
-      border: `${borderWidth[0]} solid ${rgba(black.main, 0.125)}`,
-      borderRadius: borderRadius.xl,
-      boxShadow: xxl,
+      border: `${borderWidth[0]} solid ${rgba(black.main, 0.08)}`,
+      borderRadius: borderRadius.lg,
+      boxShadow: cardShadow,
+      transition: "all 0.25s ease-in-out",
+
+      "&:hover": {
+        transform: "scale(1.01)",
+        boxShadow: `0 12px 24px rgba(0, 0, 0, 0.12)`,
+      },
     },
   },
 };

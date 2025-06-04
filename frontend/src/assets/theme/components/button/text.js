@@ -16,95 +16,72 @@
 
 */
 
-// Vision UI Dashboard React Base Styles
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
-
-// Vision UI Dashboard React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { transparent, primary, grey, text } = colors;
+const { primary, grey, text } = colors;
 const { size } = typography;
 
 export default {
   base: {
-    backgroundColor: transparent.main,
-    height: "max-content",
-    color: text.main,
-    boxShadow: "none",
-    padding: `${pxToRem(6)} ${pxToRem(12)}`,
+    backgroundColor: "transparent",
+    color: primary.main,
+    fontWeight: 500,
+    padding: `${pxToRem(6)} ${pxToRem(16)}`,
+    transition: "all 180ms ease-in-out",
 
     "&:hover": {
-      backgroundColor: transparent.main,
-      boxShadow: "none",
-      color: text.focus,
+      color: primary.focus,
+      backgroundColor: "rgba(0, 0, 0, 0.04)",
     },
 
     "&:focus": {
-      boxShadow: "none",
-      color: text.focus,
+      backgroundColor: "rgba(0, 0, 0, 0.06)",
+      outline: "none",
     },
 
-    "&:active, &:active:focus, &:active:hover": {
-      opacity: 0.85,
-      boxShadow: "none",
+    "&:active": {
+      opacity: 0.9,
     },
 
     "&:disabled": {
-      color: grey[600],
-      boxShadow: "none",
+      color: grey[500],
+      cursor: "not-allowed",
     },
 
     "& .material-icons, .material-icons-round, svg, span": {
-      fontSize: `${pxToRem(16)} !important`,
+      fontSize: pxToRem(16),
     },
   },
 
   small: {
     fontSize: size.xs,
-
-    "& .material-icons, .material-icons-round, svg, span": {
-      fontSize: `${pxToRem(12)} !important`,
-    },
+    padding: `${pxToRem(4)} ${pxToRem(12)}`,
   },
 
   large: {
     fontSize: size.sm,
-
-    "& .material-icons, .material-icons-round, svg, span": {
-      fontSize: `${pxToRem(22)} !important`,
-    },
+    padding: `${pxToRem(10)} ${pxToRem(20)}`,
   },
 
   primary: {
     color: primary.main,
-    backgroundColor: transparent.main,
 
     "&:hover": {
       color: primary.focus,
-      backgroundColor: transparent.main,
     },
 
-    "&:focus:not(:hover)": {
-      color: primary.focus,
-      backgroundColor: transparent.focus,
-      boxShadow: "none",
+    "&:focus": {
+      backgroundColor: "rgba(0, 0, 0, 0.04)",
     },
   },
 
   secondary: {
     color: text.secondary,
-    backgroundColor: transparent.main,
 
     "&:hover": {
-      color: text.secondary,
-      backgroundColor: transparent.main,
-    },
-
-    "&:focus:not(:hover)": {
-      color: text.secondary,
-      backgroundColor: transparent.focus,
-      boxShadow: "none",
+      color: text.main,
     },
   },
 };

@@ -16,43 +16,42 @@
 
 */
 
-// Vision UI Dashboard React Base Styles
 import typography from "assets/theme/base/typography";
 import borders from "assets/theme/base/borders";
-
-// Vision UI Dashboard React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { fontWeightBold, size } = typography;
+const { fontWeightSemiBold, size } = typography;
 const { borderRadius } = borders;
 
 export default {
   display: "inline-flex",
   justifyContent: "center",
   alignItems: "center",
-  fontSize: size.xs,
-  fontWeight: fontWeightBold,
-  borderRadius: borderRadius.button,
-  padding: `${pxToRem(12)} ${pxToRem(24)}`,
+  fontSize: size.sm,
+  fontWeight: fontWeightSemiBold, // Mais elegante e legível
+  borderRadius: borderRadius.md,
+  padding: `${pxToRem(10)} ${pxToRem(20)}`,
   lineHeight: 1.4,
   textAlign: "center",
-  textTransform: "unset",
+  textTransform: "capitalize",
   userSelect: "none",
-  backgroundSize: "150% !important",
-  backgroundPositionX: "25% !important",
-  transition: `all 150ms ease-in`,
+  cursor: "pointer",
+  backgroundSize: "120%",
+  backgroundPosition: "center",
+  transition: "all 200ms ease",
 
   "&:hover": {
-    transform: "scale(1.02)",
+    transform: "scale(1.015)",
+    filter: "brightness(1.03)",
   },
 
   "&:disabled": {
-    pointerEvent: "none",
-    opacity: 0.65,
+    pointerEvents: "none",
+    opacity: 0.5,
   },
 
   "& .material-icons": {
-    fontSize: pxToRem(15),
+    fontSize: pxToRem(18),
     marginTop: pxToRem(-2),
   },
 };

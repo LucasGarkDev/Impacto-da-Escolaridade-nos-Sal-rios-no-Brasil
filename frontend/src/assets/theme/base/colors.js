@@ -135,6 +135,12 @@ export default {
   },
 
   gradients: {
+    
+    newCard: {
+      main: "#FFDEE9",
+      state: "#B5FFFC",
+      deg: 135,
+    },
     navbar: {
       deg: "90deg",
       main: "#F5F5F5", // ou um tom do seu mapa TCC
