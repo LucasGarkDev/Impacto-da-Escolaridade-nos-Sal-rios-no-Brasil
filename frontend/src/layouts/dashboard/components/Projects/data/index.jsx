@@ -58,7 +58,7 @@ export default function data() {
         companies: (
           <VuiBox display="flex" alignItems="center">
             <AdobeXD size="20px" />
-            <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            <VuiTypography pl="16px" color="black" variant="button" fontWeight="medium">
               Chakra Vision UI Version
             </VuiTypography>
           </VuiBox>
@@ -74,13 +74,13 @@ export default function data() {
           </VuiBox>
         ),
         budget: (
-          <VuiTypography variant="button" color="white" fontWeight="bold">
+          <VuiTypography variant="button" color="black" fontWeight="bold">
             $14,000
           </VuiTypography>
         ),
         completion: (
           <VuiBox width="8rem" textAlign="left">
-            <VuiTypography color="white" variant="button" fontWeight="bold">
+            <VuiTypography color="black" variant="button" fontWeight="bold">
               60%
             </VuiTypography>
             <VuiProgress value={60} color="info" label={false} sx={{ background: "#2D2E5F" }} />
@@ -91,7 +91,7 @@ export default function data() {
         companies: (
           <VuiBox display="flex" alignItems="center">
             <Atlassian size="20px" />
-            <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            <VuiTypography pl="16px" color="black" variant="button" fontWeight="medium">
               Add Progress Track
             </VuiTypography>
           </VuiBox>
@@ -105,13 +105,13 @@ export default function data() {
           </VuiBox>
         ),
         budget: (
-          <VuiTypography variant="button" color="white" fontWeight="bold">
+          <VuiTypography variant="button" color="black" fontWeight="bold">
             $3,000
           </VuiTypography>
         ),
         completion: (
           <VuiBox width="8rem" textAlign="left">
-            <VuiTypography color="white" variant="button" fontWeight="bold">
+            <VuiTypography color="black" variant="button" fontWeight="bold">
               10%
             </VuiTypography>
             <VuiProgress value={10} color="info" label={false} sx={{ background: "#2D2E5F" }} />
@@ -122,7 +122,7 @@ export default function data() {
         companies: (
           <VuiBox display="flex" alignItems="center">
             <Slack size="20px" />
-            <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            <VuiTypography pl="16px" color="black" variant="button" fontWeight="medium">
               Fix Platform Errors
             </VuiTypography>
           </VuiBox>
@@ -136,13 +136,13 @@ export default function data() {
           </VuiBox>
         ),
         budget: (
-          <VuiTypography variant="button" color="white" fontWeight="bold">
+          <VuiTypography variant="button" color="black" fontWeight="bold">
             Not set
           </VuiTypography>
         ),
         completion: (
           <VuiBox width="8rem" textAlign="left">
-            <VuiTypography color="white" variant="button" fontWeight="bold">
+            <VuiTypography color="black" variant="button" fontWeight="bold">
               100%
             </VuiTypography>
             <VuiProgress value={100} color="info" label={false} sx={{ background: "#2D2E5F" }} />
@@ -153,7 +153,7 @@ export default function data() {
         companies: (
           <VuiBox display="flex" alignItems="center">
             <Spotify size="20px" />
-            <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            <VuiTypography pl="16px" color="black" variant="button" fontWeight="medium">
               Launch our Mobile App
             </VuiTypography>
           </VuiBox>
@@ -169,13 +169,13 @@ export default function data() {
           </VuiBox>
         ),
         budget: (
-          <VuiTypography variant="button" color="white" fontWeight="bold">
+          <VuiTypography variant="button" color="black" fontWeight="bold">
             $20,500
           </VuiTypography>
         ),
         completion: (
           <VuiBox width="8rem" textAlign="left">
-            <VuiTypography color="white" variant="button" fontWeight="bold">
+            <VuiTypography color="black" variant="button" fontWeight="bold">
               100%
             </VuiTypography>
             <VuiProgress value={100} color="info" label={false} sx={{ background: "#2D2E5F" }} />
@@ -186,7 +186,7 @@ export default function data() {
         companies: (
           <VuiBox display="flex" alignItems="center">
             <Jira size="20px" />
-            <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            <VuiTypography pl="16px" color="black" variant="button" fontWeight="medium">
               Add the New Pricing Page
             </VuiTypography>
           </VuiBox>
@@ -197,13 +197,13 @@ export default function data() {
           </VuiBox>
         ),
         budget: (
-          <VuiTypography variant="button" color="white" fontWeight="bold">
+          <VuiTypography variant="button" color="black" fontWeight="bold">
             $500
           </VuiTypography>
         ),
         completion: (
           <VuiBox width="8rem" textAlign="left">
-            <VuiTypography color="white" variant="button" fontWeight="bold">
+            <VuiTypography color="black" variant="button" fontWeight="bold">
               25%
             </VuiTypography>
             <VuiProgress value={25} color="info" label={false} sx={{ background: "#2D2E5F" }} />
@@ -214,7 +214,7 @@ export default function data() {
         companies: (
           <VuiBox display="flex" alignItems="center">
             <Invision size="20px" />
-            <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            <VuiTypography pl="16px" color="black" variant="button" fontWeight="medium">
               Redesign New Online Shop
             </VuiTypography>
           </VuiBox>
@@ -228,13 +228,13 @@ export default function data() {
           </VuiBox>
         ),
         budget: (
-          <VuiTypography variant="button" color="white" fontWeight="bold">
+          <VuiTypography variant="button" color="black" fontWeight="bold">
             $2,000
           </VuiTypography>
         ),
         completion: (
           <VuiBox width="8rem" textAlign="left">
-            <VuiTypography color="white" variant="button" fontWeight="bold">
+            <VuiTypography color="black" variant="button" fontWeight="bold">
               40%
             </VuiTypography>
             <VuiProgress value={40} color="info" label={false} sx={{ background: "#2D2E5F" }} />

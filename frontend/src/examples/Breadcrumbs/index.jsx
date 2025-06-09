@@ -30,63 +30,67 @@ import Icon from "@mui/material/Icon";
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
-function Breadcrumbs({ icon, title, route, light }) {
+function Breadcrumbs({ icon, title, route }) {
   const routes = route.slice(0, -1);
 
   return (
     <VuiBox mr={{ xs: 0, xl: 8 }}>
       <MuiBreadcrumbs
-        sx={{
-          "& .MuiBreadcrumbs-separator": {
-            color: ({ palette: { grey } }) => (light ? grey.main : grey[600]),
-          },
-        }}
-      >
-        <Link to="/">
-          <VuiTypography
-            component="span"
-            variant="body2"
-            color={light ? "dark" : "dark"}
-            opacity={light ? 0.8 : 0.5}
-            sx={{ lineHeight: 0 }}
-          >
-            <Icon>{icon}</Icon>
-          </VuiTypography>
-        </Link>
-        {routes.map((el) => (
-          <Link to={`/${el}`} key={el}>
+          sx={{
+            "& .MuiBreadcrumbs-separator": {
+              color: ({ palette: { text } }) => text.main,
+            },
+          }}
+        >
+          <Link to="/">
             <VuiTypography
               component="span"
-              variant="button"
-              fontWeight="regular"
-              textTransform="capitalize"
-              color={light ? "dark" : "dark"}
-              opacity={light ? 0.8 : 0.5}
+              variant="body2"
+              color="text"
+              opacity={0.6}
               sx={{ lineHeight: 0 }}
             >
-              {el}
+              <Icon>{icon}</Icon>
             </VuiTypography>
           </Link>
-        ))}
+
+          {routes.map((el) => (
+            <Link to={`/${el}`} key={el}>
+              <VuiTypography
+                component="span"
+                variant="button"
+                fontWeight="regular"
+                textTransform="capitalize"
+                color="text"
+                opacity={0.6}
+                sx={{ lineHeight: 0 }}
+              >
+                {el}
+              </VuiTypography>
+            </Link>
+          ))}
+
+          <VuiTypography
+            variant="button"
+            fontWeight="regular"
+            textTransform="capitalize"
+            color="text"
+            sx={{ lineHeight: 0 }}
+          >
+            {title.replace("-", " ")}
+          </VuiTypography>
+        </MuiBreadcrumbs>
+
         <VuiTypography
-          variant="button"
-          fontWeight="regular"
+          fontWeight="bold"
           textTransform="capitalize"
-          color={light ? "dark" : "dark"}
-          sx={{ lineHeight: 0 }}
+          variant="h6"
+          color="text"
+          noWrap
         >
           {title.replace("-", " ")}
         </VuiTypography>
-      </MuiBreadcrumbs>
-      <VuiTypography
-        fontWeight="bold"
-        textTransform="capitalize"
-        variant="h6"
-        color={light ? "dark" : "dark"}
-        noWrap
-      >
-        {title.replace("-", " ")}
-      </VuiTypography>
+
     </VuiBox>
   );
 }

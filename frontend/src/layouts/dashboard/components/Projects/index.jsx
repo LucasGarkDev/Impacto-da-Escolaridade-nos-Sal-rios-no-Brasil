@@ -71,7 +71,7 @@ function Projects() {
     >
       <VuiBox display="flex" justifyContent="space-between" alignItems="center" mb="32px">
         <VuiBox mb="auto">
-          <VuiTypography color="white" variant="lg" mb="6px" gutterBottom>
+          <VuiTypography color="black" variant="lg" mb="6px" gutterBottom>
             Projects
           </VuiTypography>
           <VuiBox display="flex" alignItems="center" lineHeight={0}>

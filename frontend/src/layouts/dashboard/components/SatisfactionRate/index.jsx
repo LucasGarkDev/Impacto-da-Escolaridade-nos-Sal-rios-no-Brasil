@@ -15,7 +15,7 @@ const SatisfactionRate = () => {
 	return (
 		<Card sx={{ height: '340px' }}>
 			<VuiBox display='flex' flexDirection='column'>
-				<VuiTypography variant='lg' color='white' fontWeight='bold' mb='4px'>
+				<VuiTypography variant='lg' color='black' fontWeight='bold' mb='4px'>
 					Satisfaction Rate
 				</VuiTypography>
 				<VuiTypography variant='button' color='text' fontWeight='regular' mb='20px'>

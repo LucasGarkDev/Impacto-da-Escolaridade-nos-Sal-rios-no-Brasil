@@ -20,7 +20,7 @@ const WelcomeMark = () => {
           <VuiTypography color="text" variant="button" fontWeight="regular" mb="12px">
             Welcome back,
           </VuiTypography>
-          <VuiTypography color="white" variant="h3" fontWeight="bold" mb="18px">
+          <VuiTypography color="black" variant="h3" fontWeight="bold" mb="18px">
             Mark Johnson
           </VuiTypography>
           <VuiTypography color="text" variant="h6" fontWeight="regular" mb="auto">

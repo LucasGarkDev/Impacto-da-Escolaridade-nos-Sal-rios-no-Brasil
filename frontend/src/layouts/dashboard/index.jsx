@@ -122,13 +122,13 @@ function Dashboard() {
             <Grid item xs={12} lg={6} xl={7}>
               <Card>
                 <VuiBox sx={{ height: "100%" }}>
-                  <VuiTypography variant="lg" color="white" fontWeight="bold" mb="5px">
+                  <VuiTypography variant="lg" color="black" fontWeight="bold" mb="5px">
                     Sales Overview
                   </VuiTypography>
                   <VuiBox display="flex" alignItems="center" mb="40px">
                     <VuiTypography variant="button" color="success" fontWeight="bold">
                       +5% more{" "}
-                      <VuiTypography variant="button" color="text" fontWeight="regular">
+                      <VuiTypography variant="button" color="black" fontWeight="regular">
                         in 2021
                       </VuiTypography>
                     </VuiTypography>
@@ -162,13 +162,13 @@ function Dashboard() {
                       barChartOptions={barChartOptionsDashboard}
                     />
                   </VuiBox>
-                  <VuiTypography variant="lg" color="white" fontWeight="bold" mb="5px">
+                  <VuiTypography variant="lg" color="black" fontWeight="bold" mb="5px">
                     Active Users
                   </VuiTypography>
                   <VuiBox display="flex" alignItems="center" mb="40px">
                     <VuiTypography variant="button" color="success" fontWeight="bold">
                       (+23){" "}
-                      <VuiTypography variant="button" color="text" fontWeight="regular">
+                      <VuiTypography variant="button" color="black" fontWeight="regular">
                         than last week
                       </VuiTypography>
                     </VuiTypography>
@@ -189,11 +189,11 @@ function Dashboard() {
                         >
                           <IoWallet color="#fff" size="12px" />
                         </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
+                        <VuiTypography color="black" variant="button" fontWeight="medium">
                           Users
                         </VuiTypography>
                       </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
+                      <VuiTypography color="black" variant="lg" fontWeight="bold" mb="8px">
                         32,984
                       </VuiTypography>
                       <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
@@ -213,11 +213,11 @@ function Dashboard() {
                         >
                           <IoIosRocket color="#fff" size="12px" />
                         </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
+                        <VuiTypography color="black" variant="button" fontWeight="medium">
                           Clicks
                         </VuiTypography>
                       </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
+                      <VuiTypography color="black" variant="lg" fontWeight="bold" mb="8px">
                         2,42M
                       </VuiTypography>
                       <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
@@ -237,11 +237,11 @@ function Dashboard() {
                         >
                           <FaShoppingCart color="#fff" size="12px" />
                         </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
+                        <VuiTypography color="black" variant="button" fontWeight="medium">
                           Sales
                         </VuiTypography>
                       </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
+                      <VuiTypography color="black" variant="lg" fontWeight="bold" mb="8px">
                         2,400$
                       </VuiTypography>
                       <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
@@ -261,11 +261,11 @@ function Dashboard() {
                         >
                           <IoBuild color="#fff" size="12px" />
                         </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
+                        <VuiTypography color="black" variant="button" fontWeight="medium">
                           Items
                         </VuiTypography>
                       </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
+                      <VuiTypography color="black" variant="lg" fontWeight="bold" mb="8px">
                         320
                       </VuiTypography>
                       <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
