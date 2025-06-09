@@ -44,7 +44,7 @@ function MasterCard({ number, valid, cvv }) {
     <Card sx={{ background: `url('${billingCard}')`, backdropfilter: "blur(31px)" }}>
       <VuiBox p={2} pt={0}>
         <VuiBox
-          color="white"
+          color="black"
           lineHeight={0}
           display="flex"
           justifyContent="space-beetween"
@@ -52,14 +52,14 @@ function MasterCard({ number, valid, cvv }) {
           width="100%"
           sx={{ width: "100%" }}
         >
-          <VuiTypography color="white" variant="lg" fontWeight="bold" mr="auto">
+          <VuiTypography color="black" variant="lg" fontWeight="bold" mr="auto">
             Vision UI
           </VuiTypography>
           <RiMastercardFill size="48px" color="white" />
         </VuiBox>
         <VuiTypography
           variant="h4"
-          color="white"
+          color="black"
           mt="auto"
           fontWeight="medium"
           sx={({ breakpoints }) => ({
@@ -75,12 +75,12 @@ function MasterCard({ number, valid, cvv }) {
         <VuiBox display="flex" justifyContent="space-between" alignItems="center">
           <VuiBox display="flex" alignItems="center">
             <VuiBox mr={3} lineHeight={1}>
-              <VuiTypography variant="xxs" color="white" fontWeight="medium" opacity={0.8}>
+              <VuiTypography variant="xxs" color="black" fontWeight="medium" opacity={0.8}>
                 VALID THRU
               </VuiTypography>
               <VuiTypography
                 variant="h6"
-                color="white"
+                color="black"
                 fontWeight="medium"
                 textTransform="capitalize"
               >
@@ -88,10 +88,10 @@ function MasterCard({ number, valid, cvv }) {
               </VuiTypography>
             </VuiBox>
             <VuiBox lineHeight={1}>
-              <VuiTypography variant="xxs" color="white" fontWeight="medium" opacity={0.8}>
+              <VuiTypography variant="xxs" color="black" fontWeight="medium" opacity={0.8}>
                 CVV
               </VuiTypography>
-              <VuiTypography variant="h6" color="white" fontWeight="medium">
+              <VuiTypography variant="h6" color="black" fontWeight="medium">
                 {cvv}
               </VuiTypography>
             </VuiBox>
@@ -110,7 +110,7 @@ MasterCard.defaultProps = {
 // Typechecking props for the MasterCard
 MasterCard.propTypes = {
   color: PropTypes.oneOf([
-    "white",
+    "black",
     "secondary",
     "info",
     "success",

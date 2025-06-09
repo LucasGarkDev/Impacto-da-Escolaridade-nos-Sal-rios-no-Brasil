@@ -34,7 +34,7 @@ function GradientBorder(props) {
         height: "fit-content",
         backgroundImage: backgroundImage
           ? backgroundImage
-          : "radial-gradient(94.43% 69.43% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
+          : "radial-gradient(69.43% 69.43% at 50% 50%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)",
       }}
       {...rest}
     >

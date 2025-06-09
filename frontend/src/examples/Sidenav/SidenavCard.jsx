@@ -54,11 +54,11 @@ function SidenavCard({ color, ...rest }) {
           </Icon>
         </VuiBox>
         <VuiBox lineHeight={1}>
-          <VuiTypography variant="h6" color="white">
+          <VuiTypography variant="h6" color="black">
             Need help?
           </VuiTypography>
           <VuiBox mb={1.825} mt={-1}>
-            <VuiTypography variant="caption" color="white" fontWeight="regular">
+            <VuiTypography variant="caption" color="black" fontWeight="regular">
               Please check our docs
             </VuiTypography>
           </VuiBox>

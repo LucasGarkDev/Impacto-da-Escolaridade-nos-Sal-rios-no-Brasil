@@ -20,7 +20,7 @@ function navbar(theme, ownerState) {
   const { palette, boxShadows, functions, transitions, breakpoints, borders } = theme;
   const { transparentNavbar, absolute, light } = ownerState;
 
-  const { dark, white, text, transparent, gradients, borderCol } = palette;
+  const { dark, text, transparent, gradients, borderCol } = palette;
   const { navbarBoxShadow } = boxShadows;
   const { linearGradient, pxToRem } = functions;
   const { borderRadius } = borders;
@@ -39,17 +39,9 @@ function navbar(theme, ownerState) {
           )} !importants`,
 
     color: () => {
-      let color;
-
-      if (light) {
-        color = white.main;
-      } else if (transparentNavbar) {
-        color = text.main;
-      } else {
-        color = dark.main;
-      }
-      color = white.main;
-      return color;
+      if (light) return text.main;
+      if (transparentNavbar) return text.main;
+      return dark.main;
     },
     top: absolute ? 0 : pxToRem(12),
     minHeight: pxToRem(75),
@@ -101,7 +93,7 @@ const navbarContainer = ({ breakpoints }) => ({
   },
 });
 
-const navbarRow = ({ breakpoints, palette: { white } }, { isMini }) => ({
+const navbarRow = ({ breakpoints, palette: { white, text } }, { isMini, light }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -113,22 +105,22 @@ const navbarRow = ({ breakpoints, palette: { white } }, { isMini }) => ({
           "&.MuiBreadcrumbs-li": {
             "& a": {
               "& span": {
-                color: white.main,
+                color: light ? text.main : white.main,
               },
             },
           },
           "&.MuiBreadcrumbs-li span.MuiTypography-button": {
-            color: white.main,
+            color: light ? text.main : white.main,
           },
           "&.MuiBreadcrumbs-separator": {
-            color: white.main,
+            color: light ? text.main : white.main,
           },
         },
       },
     },
   },
   "& h6": {
-    color: "rgb(255,255,255)",
+    color: "rgb(31, 29, 29)",
   },
 
   [breakpoints.up("md")]: {
@@ -142,34 +134,43 @@ const navbarRow = ({ breakpoints, palette: { white } }, { isMini }) => ({
   },
 });
 
-const navbarIconButton = ({ typography: { size }, breakpoints, palette: { grey, white } }) => ({
-  px: 0.75,
+const navbarIconButton = (theme) => {
+  const { typography: { size }, breakpoints, palette: { white, text } } = theme;
+  const light = theme.ownerState?.light; // 🔍 tenta buscar da ownerState
 
-  "& .material-icons, .material-icons-round": {
-    fontSize: `${size.md} !important`,
-    color: white.main,
-  },
-
-  "& .MuiTypography-root": {
-    display: "none",
-    color: white.main,
-
-    [breakpoints.up("sm")]: {
-      display: "inline-block",
-      lineHeight: 1.2,
-      ml: 0.5,
+  return {
+    px: 0.75,
+    "& .material-icons, .material-icons-round": {
+      fontSize: `${size.md} !important`,
+      color: light ? text.main : white.main,
     },
-  },
-});
+    "& .MuiTypography-root": {
+      display: "none",
+      color: light ? text.main : white.main,
 
-const navbarMobileMenu = ({ breakpoints, palette: { white } }) => ({
-  display: "inline-block",
-  lineHeight: 0,
-  color: white.main,
+      [breakpoints.up("sm")]: {
+        display: "inline-block",
+        lineHeight: 1.2,
+        ml: 0.5,
+      },
+    },
+  };
+};
 
-  [breakpoints.up("xl")]: {
-    display: "none",
-  },
-});
+const navbarMobileMenu = (theme) => {
+  const { breakpoints, palette: { white, text } } = theme;
+  const light = theme.ownerState?.light;
+
+  return {
+    display: "inline-block",
+    lineHeight: 0,
+    color: light ? text.main : white.main,
+
+    [breakpoints.up("xl")]: {
+      display: "none",
+    },
+  };
+};
+
 
 export { navbar, navbarContainer, navbarRow, navbarIconButton, navbarMobileMenu };

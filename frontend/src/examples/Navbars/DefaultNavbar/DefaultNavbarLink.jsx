@@ -52,7 +52,7 @@ function DefaultNavbarLink({ icon, name, route }) {
         <VuiTypography
           variant="button"
           fontWeight="regular"
-          color="white"
+          color="black"
           textTransform="capitalize"
           sx={{ width: "100%", lineHeight: 0 }}
         >

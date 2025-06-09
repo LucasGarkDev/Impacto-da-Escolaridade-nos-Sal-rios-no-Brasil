@@ -120,7 +120,7 @@ function Sidenav({ color, brandName, routes, ...rest }) {
       returnValue = (
         <VuiTypography
           key={key}
-          color="white"
+          color="black"
           display="block"
           variant="caption"
           fontWeight="bold"

@@ -35,7 +35,7 @@ function Footer() {
         <VuiTypography
           variant="button"
           sx={{ textAlign: "center", fontWeight: "400 !important" }}
-          color="white"
+          color="black"
         >
           @ 2021, Made with ❤️&nbsp;&nbsp;&nbsp; by{" "}
           <VuiTypography
@@ -43,7 +43,7 @@ function Footer() {
             variant="button"
             href="https://simmmple.com/"
             sx={{ textAlign: "center", fontWeight: "500 !important" }}
-            color="white"
+            color="black"
             mr="2px"
           >
             Simmmple
@@ -56,7 +56,7 @@ function Footer() {
             variant="button"
             href="https://www.creative-tim.com/"
             sx={{ textAlign: "center", fontWeight: "500 !important" }}
-            color="white"
+            color="black"
           >
             Creative Tim
           </VuiTypography>
@@ -70,7 +70,7 @@ function Footer() {
               component="a"
               href="https://www.creative-tim.com/templates"
               variant="body2"
-              color="white"
+              color="black"
             >
               Marketplace
             </VuiTypography>
@@ -80,7 +80,7 @@ function Footer() {
               component="a"
               href="https://www.creative-tim.com/blog/"
               variant="body2"
-              color="white"
+              color="black"
             >
               Blog
             </VuiTypography>
@@ -90,7 +90,7 @@ function Footer() {
               component="a"
               href="https://www.creative-tim.com/license"
               variant="body2"
-              color="white"
+              color="black"
             >
               License
             </VuiTypography>
