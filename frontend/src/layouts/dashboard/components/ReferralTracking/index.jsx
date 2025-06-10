@@ -4,18 +4,17 @@ import VuiBox from 'components/VuiBox';
 import VuiTypography from 'components/VuiTypography';
 import colors from 'assets/theme/base/colors';
 import { FaEllipsisH } from 'react-icons/fa';
-import linearGradient from 'assets/theme/functions/linearGradient';
+// import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function ReferralTracking() {
-	const { info, gradients } = colors;
-	const { cardContent } = gradients;
+	const { info} = colors;
 
 	return (
 		<Card
 			sx={{
 				height: '100%',
-				background: linearGradient(gradients.cardDark.main, gradients.cardDark.state, gradients.cardDark.deg)
+				background: '#fff',
 			}}>
 			<VuiBox sx={{ width: '100%' }}>
 				<VuiBox
@@ -24,7 +23,7 @@ function ReferralTracking() {
 					justifyContent='space-beetween'
 					sx={{ width: '100%' }}
 					mb='40px'>
-					<VuiTypography variant='lg' color='white' mr='auto' fontWeight='bold'>
+					<VuiTypography variant='lg' color='black' mr='auto' fontWeight='bold'>
 						Referral Tracking
 					</VuiTypography>
 					<VuiBox
@@ -72,7 +71,7 @@ function ReferralTracking() {
 							p='20px 22px'
 							flexDirection='column'
 							sx={({ breakpoints }) => ({
-								background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
+								background: '#fff',
 								borderRadius: '20px',
 								[breakpoints.up('xl')]: {
 									maxWidth: '110px !important'
@@ -85,7 +84,7 @@ function ReferralTracking() {
 							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
 								Invited
 							</VuiTypography>
-							<VuiTypography color='white' variant='lg' fontWeight='bold'>
+							<VuiTypography color='black' variant='lg' fontWeight='bold'>
 								145 people
 							</VuiTypography>
 						</VuiBox>
@@ -95,7 +94,7 @@ function ReferralTracking() {
 							p='20px 22px'
 							flexDirection='column'
 							sx={({ breakpoints }) => ({
-								background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
+								background: '#fff',
 								borderRadius: '20px',
 								[breakpoints.up('xl')]: {
 									maxWidth: '110px !important'
@@ -108,7 +107,7 @@ function ReferralTracking() {
 							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
 								Bonus
 							</VuiTypography>
-							<VuiTypography color='white' variant='lg' fontWeight='bold'>
+							<VuiTypography color='black' variant='lg' fontWeight='bold'>
 								1,465
 							</VuiTypography>
 						</VuiBox>
@@ -136,7 +135,7 @@ function ReferralTracking() {
 									Safety
 								</VuiTypography>
 								<VuiTypography
-									color='white'
+									color='black'
 									variant='d5'
 									fontWeight='bold'
 									mb='4px'

@@ -65,7 +65,7 @@ const SatisfactionRate = () => {
 						transform: 'translateY(-90%)',
 						zIndex: '1000'
 					})}>
-					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
+					<VuiTypography color='white' variant='caption' display='inline-block' fontWeight='regular'>
 						0%
 					</VuiTypography>
 					<VuiBox
@@ -77,11 +77,11 @@ const SatisfactionRate = () => {
 						<VuiTypography color='white' variant='h3'>
 							95%
 						</VuiTypography>
-						<VuiTypography color='text' variant='caption' fontWeight='regular'>
+						<VuiTypography color='white' variant='caption' fontWeight='regular'>
 							Based on likes
 						</VuiTypography>
 					</VuiBox>
-					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
+					<VuiTypography color='white' variant='caption' display='inline-block' fontWeight='regular'>
 						100%
 					</VuiTypography>
 				</VuiBox>

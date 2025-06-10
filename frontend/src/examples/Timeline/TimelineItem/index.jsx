@@ -28,13 +28,13 @@ import VuiTypography from "components/VuiTypography";
 import VuiBadge from "components/VuiBadge";
 
 // Timeline context
-import { useTimeline } from "examples/Timeline/context";
+// import { useTimeline } from "examples/Timeline/context";
 
 // Custom styles for the TimelineItem
 import { timelineItem } from "examples/Timeline/TimelineItem/styles";
 
 function TimelineItem({ color, icon, title, dateTime, description, badges, lastItem }) {
-  const isDark = useTimeline();
+  // const isDark = useTimeline();
 
   const renderBadges =
     badges.length > 0
@@ -63,7 +63,7 @@ function TimelineItem({ color, icon, title, dateTime, description, badges, lastI
         {icon}
       </VuiBox>
       <VuiBox ml="30px" pt={description ? 0.7 : 0.5} lineHeight={0} maxWidth="30rem">
-        <VuiTypography variant="button" fontWeight="medium" color="white">
+        <VuiTypography variant="button" fontWeight="medium" color="black">
           {title}
         </VuiTypography>
         <VuiBox mt={0.5}>

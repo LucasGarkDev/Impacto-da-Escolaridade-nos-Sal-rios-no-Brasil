@@ -42,7 +42,7 @@ function OrdersOverview() {
   return (
     <Card className="h-100">
       <VuiBox mb="16px">
-        <VuiTypography variant="lg" fontWeight="bold" mb="5px" color="white">
+        <VuiTypography variant="lg" fontWeight="bold" mb="5px" color="black">
           Orders overview
         </VuiTypography>
         <VuiBox mb={2}>
