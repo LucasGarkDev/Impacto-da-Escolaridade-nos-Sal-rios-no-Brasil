@@ -111,19 +111,20 @@ const collapseIcon = ({ palette: { white, gradients } }, { active }) => ({
 });
 
 function collapseText(theme, ownerState) {
-  const { typography, transitions, breakpoints, functions } = theme;
+  const { typography, transitions, breakpoints, functions, palette } = theme;
   const { miniSidenav, active } = ownerState;
 
   const { size, fontWeightMedium, fontWeightRegular } = typography;
   const { pxToRem } = functions;
+  const { white, text } = palette; // Pegando os valores do tema
 
   return {
     marginLeft: pxToRem(12.8),
 
     [breakpoints.up("xl")]: {
-      opacity: miniSidenav || miniSidenav ? 0 : 1,
-      maxWidth: miniSidenav || miniSidenav ? 0 : "100%",
-      marginLeft: miniSidenav || miniSidenav ? 0 : pxToRem(12.8),
+      opacity: miniSidenav ? 0 : 1,
+      maxWidth: miniSidenav ? 0 : "100%",
+      marginLeft: miniSidenav ? 0 : pxToRem(12.8),
       transition: transitions.create(["opacity", "margin"], {
         easing: transitions.easing.easeInOut,
         duration: transitions.duration.standard,
@@ -131,9 +132,14 @@ function collapseText(theme, ownerState) {
     },
 
     "& span": {
+      color: active ? white.main : text.main, // ⭐ COR BASEADA NO ESTADO
       fontWeight: active ? fontWeightMedium : fontWeightRegular,
       fontSize: size.sm,
       lineHeight: 0,
+      transition: transitions.create("color", {
+        easing: transitions.easing.easeInOut,
+        duration: transitions.duration.standard,
+      }),
     },
   };
 }

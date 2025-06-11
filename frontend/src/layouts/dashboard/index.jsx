@@ -31,11 +31,11 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
-import linearGradient from "assets/theme/functions/linearGradient";
+// import linearGradient from "assets/theme/functions/linearGradient";
 
 // Vision UI Dashboard React base styles
 // import typography from "assets/theme/base/typography";
-import colors from "assets/theme/base/colors";
+// import colors from "assets/theme/base/colors";
 
 // Dashboard layout components
 import WelcomeMark from "layouts/dashboard/components/WelcomeMark";
@@ -61,8 +61,8 @@ import { barChartDataDashboard } from "layouts/dashboard/data/barChartData";
 import { barChartOptionsDashboard } from "layouts/dashboard/data/barChartOptions";
 
 function Dashboard() {
-  const { gradients } = colors;
-  const { cardContent } = gradients;
+  // const { gradients } = colors;
+  // const { cardContent } = gradients;
 
   return (
     <DashboardLayout>
@@ -149,11 +149,7 @@ function Dashboard() {
                     mb="24px"
                     height="220px"
                     sx={{
-                      background: linearGradient(
-                        cardContent.main,
-                        cardContent.state,
-                        cardContent.deg
-                      ),
+                      background: "white",
                       borderRadius: "20px",
                     }}
                   >

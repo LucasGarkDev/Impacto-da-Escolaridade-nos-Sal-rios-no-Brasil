@@ -33,7 +33,7 @@ export const barChartOptionsDashboard = {
         fontFamily: "Plus Jakarta Display",
       },
     },
-    theme: "dark",
+    theme: "light"
   },
   xaxis: {
     categories: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -41,7 +41,7 @@ export const barChartOptionsDashboard = {
     labels: {
       show: false,
       style: {
-        colors: "#fff",
+        colors: "black",
         fontSize: "10px",
       },
     },
@@ -54,11 +54,11 @@ export const barChartOptionsDashboard = {
   },
   yaxis: {
     show: true,
-    color: "#fff",
+    color: "black",
     labels: {
       show: true,
       style: {
-        colors: "#fff",
+        colors: "dark",
         fontSize: "10px",
         fontFamily: "Plus Jakarta Display",
       },
@@ -68,7 +68,7 @@ export const barChartOptionsDashboard = {
     show: false,
   },
   fill: {
-    colors: "#fff",
+    colors: "white",
   },
   dataLabels: {
     enabled: false,

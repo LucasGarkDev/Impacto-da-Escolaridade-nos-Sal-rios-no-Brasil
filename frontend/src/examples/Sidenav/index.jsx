@@ -48,6 +48,7 @@ import { useVisionUIController, setMiniSidenav, setTransparentSidenav } from "co
 
 // Vision UI Dashboard React icons
 import SimmmpleLogo from "examples/Icons/SimmmpleLogo.jsx";
+import minhaLogo from "assets/images/1517810354775.jpeg";
 
 // function Sidenav({ color, brand, brandName, routes, ...rest }) {
 function Sidenav({ color, brandName, routes, ...rest }) {
@@ -165,47 +166,46 @@ function Sidenav({ color, brandName, routes, ...rest }) {
           </VuiTypography>
         </VuiBox>
         <VuiBox component={NavLink} to="/" display="flex" alignItems="center">
-          <VuiBox
-            sx={
-              ((theme) => sidenavLogoLabel(theme, { miniSidenav }),
-              {
-                display: "flex",
-                alignItems: "center",
-                margin: "0 auto",
-              })
-            }
-          >
-            <VuiBox
-              display="flex"
-              sx={
-                ((theme) => sidenavLogoLabel(theme, { miniSidenav, transparentSidenav }),
-                {
-                  mr: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : 1,
-                })
-              }
-            >
-              <SimmmpleLogo size="24px" />
-            </VuiBox>
-            <VuiTypography
-              variant="button"
-              textGradient={true}
-              color="logo"
-              fontSize={14}
-              letterSpacing={2}
-              fontWeight="medium"
-              sx={
-                ((theme) => sidenavLogoLabel(theme, { miniSidenav, transparentSidenav }),
-                {
-                  opacity: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : 1,
-                  maxWidth: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : "100%",
-                  margin: "0 auto",
-                })
-              }
-            >
-              {brandName}
-            </VuiTypography>
-          </VuiBox>
-        </VuiBox>
+    <VuiBox
+      sx={(theme) => ({
+        ...sidenavLogoLabel(theme, { miniSidenav }),
+        display: "flex",
+        alignItems: "center",
+        margin: "0 auto",
+      })}
+    >
+      <VuiBox
+        component="img"
+        src={minhaLogo}
+        alt="Minha Logo"
+        width="24px"
+        height="24px"
+        sx={(theme) => ({
+          ...sidenavLogoLabel(theme, { miniSidenav, transparentSidenav }),
+          mr: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : 1,
+        })}
+      />
+      <SimmmpleLogo size="24px" />
+    </VuiBox>
+
+    <VuiTypography
+      variant="button"
+      textGradient={true}
+      color="logo"
+      fontSize={14}
+      letterSpacing={2}
+      fontWeight="medium"
+      sx={(theme) => ({
+        ...sidenavLogoLabel(theme, { miniSidenav, transparentSidenav }),
+        opacity: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : 1,
+        maxWidth: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : "100%",
+        margin: "0 auto",
+      })}
+    >
+      {brandName}
+    </VuiTypography>
+  </VuiBox>
+
       </VuiBox>
       <Divider light />
       <List>{renderRoutes}</List>

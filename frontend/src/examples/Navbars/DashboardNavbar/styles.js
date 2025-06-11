@@ -16,6 +16,8 @@
 
 */
 
+import { dark } from "@mui/material/styles/createPalette";
+
 function navbar(theme, ownerState) {
   const { palette, boxShadows, functions, transitions, breakpoints, borders } = theme;
   const { transparentNavbar, absolute, light } = ownerState;
@@ -93,7 +95,7 @@ const navbarContainer = ({ breakpoints }) => ({
   },
 });
 
-const navbarRow = ({ breakpoints, palette: { white, text } }, { isMini, light }) => ({
+const navbarRow = ({ breakpoints, palette: { dark, text } }, { isMini, light }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -105,15 +107,15 @@ const navbarRow = ({ breakpoints, palette: { white, text } }, { isMini, light })
           "&.MuiBreadcrumbs-li": {
             "& a": {
               "& span": {
-                color: light ? text.main : white.main,
+                color: light ? text.main : dark.main,
               },
             },
           },
           "&.MuiBreadcrumbs-li span.MuiTypography-button": {
-            color: light ? text.main : white.main,
+            color: light ? text.main : dark.main,
           },
           "&.MuiBreadcrumbs-separator": {
-            color: light ? text.main : white.main,
+            color: light ? text.main : dark.main,
           },
         },
       },
@@ -135,18 +137,18 @@ const navbarRow = ({ breakpoints, palette: { white, text } }, { isMini, light })
 });
 
 const navbarIconButton = (theme) => {
-  const { typography: { size }, breakpoints, palette: { white, text } } = theme;
+  const { typography: { size }, breakpoints, palette: { dark, text } } = theme;
   const light = theme.ownerState?.light; // 🔍 tenta buscar da ownerState
 
   return {
     px: 0.75,
     "& .material-icons, .material-icons-round": {
       fontSize: `${size.md} !important`,
-      color: light ? text.main : white.main,
+      color: light ? text.main : dark.main,
     },
     "& .MuiTypography-root": {
       display: "none",
-      color: light ? text.main : white.main,
+      color: light ? text.main : dark.main,
 
       [breakpoints.up("sm")]: {
         display: "inline-block",
@@ -158,13 +160,13 @@ const navbarIconButton = (theme) => {
 };
 
 const navbarMobileMenu = (theme) => {
-  const { breakpoints, palette: { white, text } } = theme;
+  const { breakpoints, palette: { dark, text } } = theme;
   const light = theme.ownerState?.light;
 
   return {
     display: "inline-block",
     lineHeight: 0,
-    color: light ? text.main : white.main,
+    color: light ? text.main : dark.main,
 
     [breakpoints.up("xl")]: {
       display: "none",
