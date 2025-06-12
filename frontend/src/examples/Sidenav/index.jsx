@@ -61,27 +61,12 @@ function Sidenav({ color, brandName, routes, ...rest }) {
   const closeSidenav = () => setMiniSidenav(dispatch, true);
 
   useEffect(() => {
-    // A function that sets the mini state of the sidenav.
-    function handleMiniSidenav() {
-      setMiniSidenav(dispatch, window.innerWidth < 1200);
-    }
-
-    /** 
-     The event listener that's calling the handleMiniSidenav function when resizing the window.
-    */
-    window.addEventListener("resize", handleMiniSidenav);
-
-    // Call the handleMiniSidenav function to set the state with the initial value.
-    handleMiniSidenav();
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleMiniSidenav);
-  }, [dispatch, location]);
+    // Força a sidebar sempre expandida
+    setMiniSidenav(dispatch, false);
+  }, [dispatch]);
 
   useEffect(() => {
-    if (window.innerWidth < 1440) {
-      setTransparentSidenav(dispatch, false);
-    }
+    setTransparentSidenav(dispatch, false);
   }, [dispatch]);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
@@ -178,8 +163,8 @@ function Sidenav({ color, brandName, routes, ...rest }) {
         component="img"
         src={minhaLogo}
         alt="Minha Logo"
-        width="24px"
-        height="24px"
+        width="150px"
+        height="150px"
         sx={(theme) => ({
           ...sidenavLogoLabel(theme, { miniSidenav, transparentSidenav }),
           mr: miniSidenav || (miniSidenav && transparentSidenav) ? 0 : 1,
@@ -225,8 +210,8 @@ function Sidenav({ color, brandName, routes, ...rest }) {
           },
         })}
       >
-        <SidenavCard color={color} />
-        <VuiBox mt={2}>
+        {/* <SidenavCard color={color} /> */}
+        {/* <VuiBox mt={2}>
           <VuiButton
             component="a"
             href="https://creative-tim.com/product/vision-ui-dashboard-pro-react"
@@ -238,7 +223,7 @@ function Sidenav({ color, brandName, routes, ...rest }) {
           >
             Upgrade to PRO
           </VuiButton>
-        </VuiBox>
+        </VuiBox> */}
       </VuiBox>
     </SidenavRoot>
   );

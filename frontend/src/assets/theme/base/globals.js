@@ -30,11 +30,12 @@ export default {
     scrollBehavior: "smooth",
     backgroundColor: backgroundBase,
   },
-  
+
   body: {
     backgroundColor: backgroundBase,
     color: textMain,
     fontSmoothing: "antialiased",
+    overflowX: "hidden", // <- Adiciona isso aqui 🔥
   },
 
   "*, *::before, *::after": {

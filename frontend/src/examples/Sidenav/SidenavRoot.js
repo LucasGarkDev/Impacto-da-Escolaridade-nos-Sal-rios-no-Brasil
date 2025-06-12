@@ -75,17 +75,22 @@ export default styled(Drawer)(({ theme, ownerState }) => {
 
   return {
     "& .MuiDrawer-paper": {
-      boxShadow: xxl,
-      border: "none",
-      background: transparentSidenav
+    boxShadow: xxl,
+    border: "none",
+    background: transparentSidenav
       ? transparent.main
       : linearGradient(
-            gradients.sidenav.main,
-            gradients.sidenav.state,
-            gradients.sidenav.deg
-          ),
+          gradients.sidenav.main,
+          gradients.sidenav.state,
+          gradients.sidenav.deg
+        ),
     backdropFilter: transparentSidenav ? "unset" : "blur(120px)",
-      ...(miniSidenav ? drawerCloseStyles() : drawerOpenStyles()),
-    },
+
+    // ✅ FIX CRUCIAL AQUI:
+    overflowX: "hidden",
+    maxWidth: miniSidenav ? pxToRem(96) : `${sidebarWidth}px`,
+
+    ...(miniSidenav ? drawerCloseStyles() : drawerOpenStyles()),
+  },
   };
 });

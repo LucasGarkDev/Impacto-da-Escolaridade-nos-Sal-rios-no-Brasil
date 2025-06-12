@@ -49,7 +49,7 @@ import routes from "./routes.jsx";
 import {
   useVisionUIController,
   setMiniSidenav,
-  setOpenConfigurator,
+  // setOpenConfigurator,
 } from "./context";
 
 import ComponentLab from "pages/ComponentLab";
@@ -57,7 +57,7 @@ import ComponentLab from "pages/ComponentLab";
 
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
-  const { miniSidenav, direction, layout, openConfigurator, sidenavColor } = controller;
+  const { miniSidenav, direction, layout, sidenavColor } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
@@ -89,7 +89,7 @@ export default function App() {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  // const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -121,29 +121,29 @@ export default function App() {
       return null;
     });
 
-  const configsButton = (
-    <VuiBox
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="3.5rem"
-      height="3.5rem"
-      bgColor="info"
-      shadow="sm"
-      borderRadius="50%"
-      position="fixed"
-      right="2rem"
-      bottom="2rem"
-      zIndex={99}
-      color="white"
-      sx={{ cursor: "pointer" }}
-      onClick={handleConfiguratorOpen}
-    >
-      <Icon fontSize="default" color="inherit">
-        settings
-      </Icon>
-    </VuiBox>
-  );
+  // const configsButton = (
+  //   <VuiBox
+  //     display="flex"
+  //     justifyContent="center"
+  //     alignItems="center"
+  //     width="3.5rem"
+  //     height="3.5rem"
+  //     bgColor="info"
+  //     shadow="sm"
+  //     borderRadius="50%"
+  //     position="fixed"
+  //     right="2rem"
+  //     bottom="2rem"
+  //     zIndex={99}
+  //     color="white"
+  //     sx={{ cursor: "pointer" }}
+  //     onClick={handleConfiguratorOpen}
+  //   >
+  //     <Icon fontSize="default" color="inherit">
+  //       settings
+  //     </Icon>
+  //   </VuiBox>
+  // );
 
   // 👇👇 ESSA PARTE NOVA É O SEGREDO 👇👇
   if (pathname === "/component-lab") {
@@ -170,7 +170,7 @@ export default function App() {
               onMouseLeave={handleOnMouseLeave}
             />
             <Configurator />
-            {configsButton}
+            {/* {configsButton} */}
           </>
         )}
         {layout === "vr" && <Configurator />}
@@ -194,7 +194,7 @@ export default function App() {
             onMouseLeave={handleOnMouseLeave}
           />
           <Configurator />
-          {configsButton}
+          {/* {configsButton} */}
         </>
       )}
       {layout === "vr" && <Configurator />}

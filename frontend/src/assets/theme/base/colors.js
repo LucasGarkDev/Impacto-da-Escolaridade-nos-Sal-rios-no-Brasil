@@ -96,7 +96,7 @@ export default {
 
   // Other colors
   info: {
-    main: "#6A0572", // Roxo Profundo (Pós-graduação)
+    main: "#2A9D8F", // Roxo Profundo (Pós-graduação)
     focus: "#52045a",
     charts: {
       100: "#2d8cfc",
@@ -137,8 +137,8 @@ export default {
   gradients: {
     
     newCard: {
-      main: "#FFDEE9",
-      state: "#B5FFFC",
+      main: "#e6fff5",
+      state: "#ffffff",
       deg: 135,
     },
     navbar: {
