@@ -31,10 +31,17 @@ const KPIBox = ({ title, value, variation, icon }) => {
         >
           {title}
         </VuiTypography>
+
         {icon && (
-          <Icon fontSize="small" color="info" sx={{ opacity: 0.6 }}>
-            {icon}
-          </Icon>
+          <VuiBox sx={{ opacity: 0.7, display: "flex", alignItems: "center" }}>
+            {typeof icon === "string" ? (
+              <Icon fontSize="small" color="info">
+                {icon}
+              </Icon>
+            ) : (
+              icon
+            )}
+          </VuiBox>
         )}
       </VuiBox>
 
@@ -57,5 +64,6 @@ const KPIBox = ({ title, value, variation, icon }) => {
 };
 
 export default KPIBox;
+
 
 
